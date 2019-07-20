@@ -53,15 +53,6 @@ education:
     - degree: 학사 - 융합전자공학부
       university: 한양대학교 서울캠퍼스
       time: 2016 - 2020
-      details: |
-        Describe your study here lorem ipsum dolor sit amet, consectetuer
-        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur
-        ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-        pretium quis, sem.
-
-          - Bullet point
-          - Bullet point
 
 experiences:
     - role: Lead Developer
@@ -159,8 +150,8 @@ skills:
     title: Skills &amp; Proficiency
 
     toolset:
-      - name: Python & Django
-        level: 98%
+      - name: Keras, Python, Numpy
+        level: AI기반 Captcha 해제 프로그램 개발
 
       - name: Javascript & jQuery
         level: 98%
