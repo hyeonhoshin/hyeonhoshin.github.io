@@ -99,7 +99,7 @@ projects:
 
     assignments:
       - title: 헬륨을 이용한 드론의 체공시간 향상 연구
-        link: "/proofs/helium_drone_2018.pdf"
+        link: "/online-cv/proofs/helium_drone_2018.pdf"
         tagline: "드론의 체공 시간 문제를 해결하기 위해, 더 나은 체공 시간을 가진 비행선과 융합하는 시도를
         진행했습니다. 한양대학교 스마트교수 학습센터로부터 150만원의 지원금을 받아 연구를 수행했으며,
         최종발표 및 연구 마무리 또한 진행했습니다."
