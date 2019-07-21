@@ -14,7 +14,7 @@ sidebar:
     # Sidebar links
     email: tlsgusghq@me.com
     phone: 010-5136-6003
-    website: blog.webjeda.com #do not add http://
+    website:  #do not add http://
     linkedin: 
     github: tanukimong
     gitlab:
@@ -99,7 +99,7 @@ projects:
 
     assignments:
       - title: 헬륨을 이용한 드론의 체공시간 향상 연구
-        link: "#hook"
+        link: "/proofs/helium_drone_2018.pdf"
         tagline: "드론의 체공 시간 문제를 해결하기 위해, 더 나은 체공 시간을 가진 비행선과 융합하는 시도를
         진행했습니다. 한양대학교 스마트교수 학습센터로부터 150만원의 지원금을 받아 연구를 수행했으며,
         최종발표 및 연구 마무리 또한 진행했습니다."
@@ -108,18 +108,6 @@ projects:
         link: "#"
         tagline: "AI를 이용한 사람, 사물 추적 드론 개발에 참여하였으며, 주로 Depth Camera를 이용한 사람 및 사람 인식
         임베디드 인공지능 시스템(Jetson TX2)와 드론 간의 결합 등을 경험했습니다. "
-
-      - title: Tempo
-        link: "#"
-        tagline: "A responsive website template designed to help startups promote their products or services and to attract users &amp; investors"
-
-      - title: Atom
-        link: "#"
-        tagline: "A comprehensive website template solution for startups/developers to market their mobile apps."
-
-      - title: Delta
-        link: "#"
-        tagline: "A responsive Bootstrap one page theme designed to help app developers promote their mobile apps"
 
 publications:
     title: Publications
