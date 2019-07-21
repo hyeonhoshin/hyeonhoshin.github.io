@@ -64,7 +64,7 @@ experiences:
         제작해 본 경험도 있습니다. 
 
     - role: Senior Engineer
-      time: 22018.07 - 2018.12
+      time: 2018.07 - 2018.12
       company: DeepDroner, 한양학술타운
       details: |
         드론의 체공 시간 문제를 해결하기 위해, 더 나은 체공 시간을 가진 비행선과 융합하는 시도를
@@ -95,9 +95,7 @@ experiences:
 projects:
     title: Projects
     intro: >
-      You can list your side projects or open source libraries in this
-      section. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Vestibulum et ligula in nunc bibendum fringilla a eu lectus.
+      스스로 만들어본 Toy projects들의 상세 내용을 볼 수 있는 페이지 입니다.
 
     assignments:
       - title: 헬륨을 이용한 드론의 체공시간 향상 연구
