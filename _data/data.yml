@@ -9,7 +9,7 @@ sidebar:
     # Profile information
     name: Hyeonho Shin
     tagline: Undergraduate Student
-    avatar: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
+    avatar: profile.jpg  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
 
     # Sidebar links
     email: tlsgusghq@me.com
@@ -45,7 +45,7 @@ sidebar:
         link:
 
 career-profile:
-    title: Career Profile
+    title: Abstract
     summary: |
       음. 뭐 쓰지.
 
@@ -108,6 +108,11 @@ projects:
         link: "#"
         tagline: "AI를 이용한 사람, 사물 추적 드론 개발에 참여하였으며, 주로 Depth Camera를 이용한 사람 및 사람 인식
         임베디드 인공지능 시스템(Jetson TX2)와 드론 간의 결합 등을 경험했습니다. "
+
+career-profile:
+    title: Voluteer
+    summary: |
+      음. 뭐 쓰지.
 
 publications:
     title: Publications
