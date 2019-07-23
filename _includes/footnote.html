@@ -1,0 +1,22 @@
+{% assign footnotes = site.data.data.footnote %}
+{% if footnotes %}
+<section class="section footnotes-section">
+
+    <h2 class="section-title">
+      <span class="fa-stack fa-xs">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-quote-left fa-stack-1x fa-inverse"></i>
+      </span>
+      {{ footnotes.title }}
+    </h2>
+  
+    {% for footnote in footnotes.lists %}
+      <div class="footnote">
+        <span class="fa-stack fa-xs">
+            <i class="fas fa-circle fa-stack-1x"></i>
+            {{ forloop.index }}
+        </span>    
+        {{ footnote }}
+      </div><!--//item-->
+    {% endfor %}
+{% endif %}
