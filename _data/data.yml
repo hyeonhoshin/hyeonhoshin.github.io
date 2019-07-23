@@ -48,7 +48,9 @@ career-profile:
     title: Abstract
     summary: |
       음. 뭐 쓰지.
-
+      
+      ## Test h1
+      
       - 리스트 1
       - 리스트 2
 
@@ -90,7 +92,7 @@ experiences:
     
     - role: Senior Engineer
       time: 2019.03 - Present
-      company: 16Lab, 한양학술타운
+      company: 16Lab, 한양대학교 HX-Corps 실전문제 연구단
       details: |
         AI를 이용한 사람, 사물 추적 드론 개발에 참여하였으며, 주로 Depth Camera를 이용한 사람 및 사람 인식
         임베디드 인공지능 시스템(Jetson TX2)와 드론 간의 결합 등을 경험했습니다. 
@@ -121,8 +123,8 @@ projects:
       - title: 외부 상황에 강인한 자율 주행 프로그램
         link: "/online-cv/proofs/lane_detection_2019.pdf"
         tagline: "기존 Lane detection 알고리즘의 경우, 강한 햇빛 아래에서는 픽셀이 포화되어 Lane의 feature를 추출하기 
-        어려웠다. 이는 테슬라의 자율주행차에서 발생한 사고의 대표적인 원인으로 알 려져 있다. 본 연구에서는 멀티 카메라 혹은 필터를
-         응용하여 전처리 과정을 거친 후, Model-based detection을 진행하여 역광 아래의 환경에서 더 우수한 인식 성능을 보여주고자 한다."
+        어려웠습니다. 이는 테슬라의 자율주행차에서 발생한 사고의 대표적인 원인으로 알려져 있습니다. 본 연구에서는 멀티 카메라 혹은 필터를
+         응용하여 전처리 과정을 거친 후, Model-based detection을 진행하여 역광 아래의 환경에서 더 우수한 인식 성능을 보여주고자 합니다."
 
 
 # 아직 논문을 작성하기 않았음.
