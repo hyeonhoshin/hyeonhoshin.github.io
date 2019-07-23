@@ -48,26 +48,71 @@ career-profile:
     title: Abstract
     summary: |
       음. 뭐 쓰지.
-      
-      #### 학업
 
-      - 2016-1, 2018-1, 2018-2, 학업우수
-      - 2016-2, 2017-1,    학업우등
-      - 2018.08 - 2018. 12, 러닝페이스메이커[1], 알고리즘, 팀장
-      - 2019.04 - 2019. 07, 러닝페이스메이커[1], 임베디드시스템설계, 팀장
+studies:
+  title: 학업
+  item:
+    - name: 학업우수
+      time: 2016-1, 2018-1, 2018-2
 
-      #### 장학
-      - 2016.03 - 2018.02, 융합전자공학 신입학 장학금, 전액
-      - 2018.03 - 2020.02, 국가우수장학금 (이공계), 전액
+    - name: 학업우등
+      time: 2016-2, 2017-1
+    
+    - name: 알고리즘, 러닝페이스메이커[1]
+      time: 2018.08 - 2018. 12
+      role: 팀장
+    
+    - name: 임베디드시스템, 러닝페이스메이커[1]
+      time: 2019.04 - 2019. 07
+      role: 팀장
 
-      #### 봉사
-      - 2018.08, 오픈 세미나[3], 개최자, Matlab with Git
-      - 2018.08 - 2018. 12, 공업수학2 튜터링, 멘토.
-      - 2016.11 - 2019. 02, 공블러 고등학생 멘토링, 멘토
-      - 2019.02 - 2019. 07, 공과대학 유학생 튜터링, 멘토, Data Structure.
+scholarships:
+  title: scholarships
+  item:
+    - name: 융합전자공학 신입학 장학금
+      time: 2016.03 - 2018.02
+      grade: Full scholarship
 
-      #### Global
-      - 2019.07.15 ~ 2019.07.20, [Qualcomm IT Tour](http://qcitour.co.kr/notice/52625)
+    - name: 국가이공계장학금, 재학중우수자
+      time: 2018.03 - 2020.02
+      grade: Full scholarship
+
+globals:
+  title: globals
+  item:
+    - name: Qualcomm IT Tour
+      time: 2019.07.15 - 2019.07.20
+      details: |
+      Qualcomm에서 소수의 학생을 선발하여, Qualcomm 샌디에이고 본사를
+      항공/숙박/식대 무료로 탐방하며 Snapdragon이나 5G 같은 주요 기술을
+      본사 직원으로부터 들을 수 있는 프로그램입니다.
+
+volunteers:
+  title: volunteers
+  item:
+    - name: Matlab with Git Open Seminar
+      time: 2018. 08
+      host: Self
+
+    - name: 공업수학2 튜터링, 멘토.
+      time: 2018.08 - 2018. 12
+      host: 한양대학교 공과대학
+
+    - name: 고등학생 진로 및 학과 소개 멘토링, 멘토
+      time: 2016.11 - 2019. 02
+      host: 공블러
+
+    - name: 공과대학 유학생 튜터링, 멘토, Data Structure.
+      time: 2019.02 - 2019. 07
+      host: 한양대학교 공과대학
+
+prizes:
+  title: Prizes
+  item:
+    - name: 우수상
+      time: 2019. 02
+      from: 한양대학교 HX-Corps 실전문제 연구단
+
 
 education:
     - degree: 학사 - 융합전자공학부

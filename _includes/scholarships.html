@@ -1,0 +1,35 @@
+{% assign scholarships = site.data.data.scholarships %}
+{% if scholarships %}
+<section class="section scholarships-section">
+
+  <h2 class="section-title">
+    <span class="fa-stack fa-xs">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fas fa-university fa-stack-1x fa-inverse"></i>
+    </span>
+    {{ scholarships.title }}
+  </h2>
+  
+  {% for scolarship in scholarships %}
+  <div class="item">
+
+    <div class="meta">
+
+      <div class="upper-row">
+        <h3 class="job-title">{{ scolarship.name }}</h3>
+        <div class="time">{{ scolarship.time }}</div>
+      </div><!--//upper-row-->
+      {% if scolarship.role %}
+      <div class="company">{{ scolarship.grade }}</div>
+      {% endif %}
+    </div><!--//meta-->
+
+    {% if scolarship.details %}
+    <div class="details">
+      {{ scolarship.details | markdownify }}
+    </div><!--//details-->
+    {% endif %}
+
+  </div><!--//item-->
+  {% endfor %}
+{% endif %}

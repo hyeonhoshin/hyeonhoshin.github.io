@@ -1,0 +1,35 @@
+{% assign prizes = site.data.data.prizes %}
+{% if prizes %}
+<section class="section prizes-section">
+
+  <h2 class="section-title">
+    <span class="fa-stack fa-xs">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fas fa-university fa-stack-1x fa-inverse"></i>
+    </span>
+    {{ prizes.title }}
+  </h2>
+  
+  {% for prize in prizes %}
+  <div class="item">
+
+    <div class="meta">
+
+      <div class="upper-row">
+        <h3 class="job-title">{{ prize.name }}</h3>
+        <div class="time">{{ prize.time }}</div>
+      </div><!--//upper-row-->
+      {% if prize.from %}
+      <div class="company">{{ prize.from }}</div>
+      {% endif %}
+    </div><!--//meta-->
+
+    {% if prize.details %}
+    <div class="details">
+      {{ prize.details | markdownify }}
+    </div><!--//details-->
+    {% endif %}
+
+  </div><!--//item-->
+  {% endfor %}
+{% endif %}
