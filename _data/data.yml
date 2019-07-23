@@ -51,7 +51,7 @@ career-profile:
 
 studies:
   title: 학업
-  item:
+  items:
     - name: 학업우수
       time: 2016-1, 2018-1, 2018-2
 
@@ -68,7 +68,7 @@ studies:
 
 scholarships:
   title: scholarships
-  item:
+  items:
     - name: 융합전자공학 신입학 장학금
       time: 2016.03 - 2018.02
       grade: Full scholarship
@@ -79,7 +79,7 @@ scholarships:
 
 globals:
   title: globals
-  item:
+  items:
     - name: Qualcomm IT Tour
       time: 2019.07.15 - 2019.07.20
       details: |
@@ -89,7 +89,7 @@ globals:
 
 volunteers:
   title: volunteers
-  item:
+  items:
     - name: Matlab with Git Open Seminar
       time: 2018. 08
       host: Self
@@ -108,7 +108,7 @@ volunteers:
 
 prizes:
   title: Prizes
-  item:
+  items:
     - name: 우수상
       time: 2019. 02
       from: 한양대학교 HX-Corps 실전문제 연구단
