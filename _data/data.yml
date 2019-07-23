@@ -83,9 +83,9 @@ globals:
     - name: Qualcomm IT Tour
       time: 2019.07.15 - 2019.07.20
       details: |
-      Qualcomm에서 소수의 학생을 선발하여, Qualcomm 샌디에이고 본사를
-      항공/숙박/식대 무료로 탐방하며 Snapdragon이나 5G 같은 주요 기술을
-      본사 직원으로부터 들을 수 있는 프로그램입니다.
+        Qualcomm에서 소수의 학생을 선발하여, Qualcomm 샌디에이고 본사를
+        항공/숙박/식대 무료로 탐방하며 Snapdragon이나 5G 같은 주요 기술을
+        본사 직원으로부터 들을 수 있는 프로그램입니다.
 
 volunteers:
   title: volunteers
