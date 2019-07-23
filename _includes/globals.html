@@ -1,0 +1,35 @@
+{% assign globals = site.data.data.globals %}
+{% if globals %}
+<section class="section globals-section">
+
+  <h2 class="section-title">
+    <span class="fa-stack fa-xs">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fas fa-hands-helping fa-stack-1x fa-inverse"></i>
+    </span>
+    {{ globals.title }}
+  </h2>
+  
+  {% for global in globals %}
+  <div class="item">
+
+    <div class="meta">
+
+      <div class="upper-row">
+        <h3 class="job-title">{{ global.name }}</h3>
+        <div class="time">{{ global.time }}</div>
+      </div><!--//upper-row-->
+      {% if global.host %}
+      <div class="company">{{ global.host }}</div>
+      {% endif %}
+    </div><!--//meta-->
+
+    {% if global.details %}
+    <div class="details">
+      {{ global.details | markdownify }}
+    </div><!--//details-->
+    {% endif %}
+
+  </div><!--//item-->
+  {% endfor %}
+{% endif %}

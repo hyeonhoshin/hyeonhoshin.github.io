@@ -1,0 +1,35 @@
+{% assign studies = site.data.data.studies %}
+{% if studies %}
+<section class="section studies-section">
+
+  <h2 class="section-title">
+    <span class="fa-stack fa-xs">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fas fa-university fa-stack-1x fa-inverse"></i>
+    </span>
+    {{ studies.title }}
+  </h2>
+  
+  {% for study in studies %}
+  <div class="item">
+
+    <div class="meta">
+
+      <div class="upper-row">
+        <h3 class="job-title">{{ study.name }}</h3>
+        <div class="time">{{ study.time }}</div>
+      </div><!--//upper-row-->
+      {% if study.role %}
+      <div class="company">{{ study.role }}</div>
+      {% endif %}
+    </div><!--//meta-->
+
+    {% if study.details %}
+    <div class="details">
+      {{ study.details | markdownify }}
+    </div><!--//details-->
+    {% endif %}
+
+  </div><!--//item-->
+  {% endfor %}
+{% endif %}
