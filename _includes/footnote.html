@@ -11,11 +11,11 @@
     </h2>
   
     {% for footnote in footnotes.lists %}
-      <div class="footnote">
-        <span class="fa-stack fa-xs">
-            {{ forloop.index }}
-        </span>    
-        {{ footnote }}
-      </div><!--//item-->
+    <div class="footnote">
+    <span class="fa-stack fa-xs">
+        {{ forloop.index }}
+    </span>    
+    {{ footnote }}
+    </div><!--//item-->
     {% endfor %}
 {% endif %}
