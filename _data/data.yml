@@ -82,6 +82,10 @@ scholarships:
       time: 2018.03 - 2020.02
       grade: Full scholarship
 
+    - name: 한양브레인(성적우수)
+      time: 2018.09 - 2018.12
+      grade: Honor
+
 globals:
   title: globals
   items:
