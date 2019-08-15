@@ -215,6 +215,9 @@ skills:
       - name: Keras, Python, Numpy
         level: 82%
 
+      - name: Mendeley[4]
+        level: 90%
+
       - name: Git
         level: 98%
 
@@ -240,6 +243,7 @@ footnotes:
       - 한양대학교에서 지원하는 학습지원프로그램으로, 같이 공부할 학우들을 모아 한 학기동안 특정 과목에 대해 집중적으로 공부하는 프로그램입니다.
       - 한양대학교에서는 아이디어를 가진 스타트업을 선정하여, 창업동아리로 선정하고 지원금을 제공합니다. 당시 한양대의 지원금과 타 지원금을 합하여 공유 전기자전거 사업을 했습니다.
       - 교내 인터넷 커뮤니티에서 Matlab과 Github의 사용에 어려움을 겪는 사람이 많아, 장소를 빌려 무료로 강의한 적이 있습니다.
+      - Endnote와 같은 무료 서지 관리 프로그램
 
 footer: >
     Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
