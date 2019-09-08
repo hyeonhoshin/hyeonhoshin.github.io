@@ -16,7 +16,9 @@
     <div class="meta">
 
       <div class="upper-row">
-        <h3 class="job-title">{{ prize.name }}</h3>
+        <a href="{{ prizes.link }}">
+          <h3 class="job-title">{{ prize.name }}</h3>
+        </a>
         <div class="time">{{ prize.time }}</div>
       </div><!--//upper-row-->
       {% if prize.from %}
