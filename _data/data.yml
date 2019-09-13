@@ -42,7 +42,7 @@ sidebar:
         link:
 
       - item: 그림그리기
-        link:
+        link: "./drawing.html"
 
 career-profile:
     title: Abstract
@@ -137,7 +137,13 @@ experiences:
       details: |
         한양대학교 창업지원단으로부터 지원금을 받아, 공유 전기자전거 서비스 창업을 진행했습니다.
         이 때, 무인 자전거 대여 & 반납 시스텝, 도난 위치 추적 시스템을 설계했으며, 지원금으로
-        제작해 본 경험도 있습니다. 
+        제작해 본 경험도 있습니다.
+    
+    - role: Internship
+      time: 2017.10 - 2019.04
+      company: 한양대학교 5G/무인이동체 연구센터, 김선우 교수님 연구실
+      details: |
+        한양대학교 융합전자공학부 김선우 교수님 밑에서 드론의 군집 주행 연구를 도왔습니다.
 
     - role: Senior Engineer
       time: 2018.07 - 2018.12
@@ -152,6 +158,20 @@ experiences:
       details: |
         AI를 이용한 사람, 사물 추적 드론 개발에 참여하였으며, 주로 Depth Camera를 이용한 사람 및 사람 인식
         임베디드 인공지능 시스템(Jetson TX2)와 드론 간의 결합 등을 경험했습니다. 
+    
+    - role: Team Manger
+      time: 2018.09 - 2018.12
+      company: TonyStack, 러닝페이스메이커
+      link: "./proofs/hy_lions003.jpeg"
+      details: |
+        학내에서 어렵기로 유명한 김동규 교수님의 알고리즘 수업을 이해하기 위해, 한양대학교 IC-PBL 교수학습센터의 자금 지원을 받아 팀을 구성하여 한 학기 동안 심화 학습했습니다.
+
+    - role: Team Manger
+      time: 2019.04 - 2019.07
+      company: TonyStack, 러닝페이스메이커
+      link: "./proofs/hy_lions002.jpeg"
+      details: |
+        임베디드시스템과목에 대한 더 깊은 이해를 위해, 한양대학교 IC-PBL 교수학습센터의 자금 지원을 받아 팀을 구성하여 한 학기 동안 심화 학습했습니다.
 
     - role: Project Manager
       time: 2019.03 - Present

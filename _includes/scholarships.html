@@ -16,9 +16,13 @@
     <div class="meta">
 
       <div class="upper-row">
+        {% if scolarship.link %}
         <a href="{{ scolarship.link }}">
+        {% endif %}
           <h3 class="job-title">{{ scolarship.name }}</h3>
+        {% if scolarship.link %}
         </a>
+        {% endif %}
         <div class="time">{{ scolarship.time }}</div>
       </div><!--//upper-row-->
       {% if scolarship.grade %}
