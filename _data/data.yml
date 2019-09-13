@@ -92,10 +92,18 @@ globals:
   items:
     - name: Qualcomm IT Tour
       time: 2019.07.15 - 2019.07.20
+      host: Qualcomm
+      link: "./proofs/qualcomm001.jpg"
       details: |
         Qualcomm에서 소수의 학생을 선발하여, Qualcomm 샌디에이고 본사를
         항공/숙박/식대 무료로 탐방하며 Snapdragon이나 5G 같은 주요 기술을
         본사 직원으로부터 들을 수 있는 프로그램입니다.
+      
+    - name: 공과대학 유학생 튜터링
+      time: 2019.02 - 2019. 07
+      host: 한양대학교 공과대학
+      details: |
+        한양대학교 공과대학의 주선으로, 한국에 유학온 학생들에게 Data structure를 영어로 가르침.
 
 volunteers:
   title: volunteers
@@ -111,10 +119,6 @@ volunteers:
     - name: 고등학생 진로 및 학과 소개 멘토링, 멘토
       time: 2016.11 - 2019. 02
       host: 공블러
-
-    - name: 공과대학 유학생 튜터링, 멘토, Data Structure.
-      time: 2019.02 - 2019. 07
-      host: 한양대학교 공과대학
 
 prizes:
   title: Prizes

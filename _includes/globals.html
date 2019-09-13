@@ -16,7 +16,13 @@
     <div class="meta">
 
       <div class="upper-row">
-        <h3 class="job-title">{{ global.name }}</h3>
+        {% if global.link %}
+        <a href="{{ global.link }}">
+        {% endif %}
+          <h3 class="job-title">{{ global.name }}</h3>
+        {% if global.link %}
+        </a>
+        {% endif %}
         <div class="time">{{ global.time }}</div>
       </div><!--//upper-row-->
       {% if global.host %}
