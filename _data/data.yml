@@ -49,9 +49,11 @@ career-profile:
     summary: |
       > Out of Curiosity
 
-      안녕하세요, 저는 신현호입니다. 컴퓨터 아키텍처와 신호 처리에 큰 관심이 있으며, 전공 과목 또한 두 과목을 중심으로 수강해왔습니다.
+      " 안녕하세요, 저는 신현호입니다. 컴퓨터 아키텍처와 신호 처리에 큰 관심이 있으며, 전공 과목 또한 두 과목을 중심으로 수강해왔습니다.
       대학원 과정까지 전자공학을 심화 학습하여
       이스라엘의 [코어포토닉스](https://www.hankyung.com/finance/article/2019011395351)와 같은 테크 스타트업을 세우고자 하는 꿈을 꾸고 있습니다.
+
+      ** 각 항목의 제목을 클릭하시면, 해당 활동에 대한 증명이나 상세 설명을 보실 수 있습니다.**"
 
 
 studies:
@@ -130,7 +132,11 @@ prizes:
 
 
 education:
-    - degree: 학사 - 융합전자공학부
+    - degree: Master - Electrical and Electronic Engineering
+      university: KAIST
+      time: 2020 - Ongoing
+
+    - degree: Bachelr - Convergence electronic engineering
       university: 한양대학교 서울캠퍼스
       time: 2016 - 2020
 
@@ -218,6 +224,10 @@ projects:
         tagline: "기존 Lane detection 알고리즘의 경우, 강한 햇빛 아래에서는 픽셀이 포화되어 Lane의 feature를 추출하기 
         어려웠습니다. 이는 테슬라의 자율주행차에서 발생한 사고의 대표적인 원인으로 알려져 있습니다. 본 연구에서는 멀티 카메라 혹은 필터를
          응용하여 전처리 과정을 거친 후, Model-based detection을 진행하여 역광 아래의 환경에서 더 우수한 인식 성능을 보여주고자 합니다."
+
+      - title: 하냥위키
+        link: "www.hanyang.wiki"
+        tagline: "새내기들이 한양대에 대해 필요한 정보를 더 쉽게 얻을 수 있도록, 비공식 위키를 구축, 등록, 배포하였습니다."
 
 
 # 아직 논문을 작성하지 않았음.
