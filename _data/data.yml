@@ -64,14 +64,9 @@ studies:
 
     - name: 학업우등
       time: 2016-2, 2017-1
-    
-    - name: 알고리즘, 러닝페이스메이커[1]
-      time: 2018.08 - 2018. 12
-      role: 팀장
-    
-    - name: 임베디드시스템, 러닝페이스메이커[1]
-      time: 2019.04 - 2019. 07
-      role: 팀장
+
+    - name: 졸업작품 - 상위작
+      time: 2019-2
 
 scholarships:
   title: scholarships
@@ -226,7 +221,7 @@ projects:
          응용하여 전처리 과정을 거친 후, Model-based detection을 진행하여 역광 아래의 환경에서 더 우수한 인식 성능을 보여주고자 합니다."
 
       - title: 하냥위키
-        link: "https://www.hanyang.wiki"
+        link: "http://www.hanyang.wiki"
         tagline: "새내기들이 한양대에 대해 필요한 정보를 더 쉽게 얻을 수 있도록, 비공식 위키를 구축, 등록, 배포하였습니다."
 
 
