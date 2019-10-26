@@ -224,6 +224,9 @@ projects:
         link: "http://www.hanyang.wiki"
         tagline: "새내기들이 한양대에 대해 필요한 정보를 더 쉽게 얻을 수 있도록, 비공식 위키를 구축, 등록, 배포하였습니다."
 
+      - title: 원격 3D 프린터 제어시스템
+        tagline : "Raspberry pi 3와 Octoprint 라이브러리를 이용하여, 동아리방에 들리지 않고 집에서도 3D 프린팅을 가능하게 하며 동시에 원격 조작과 웹캠 모니터링이 가능하도록 만들었습니다."
+
 
 # 아직 논문을 작성하지 않았음.
 # publications:
