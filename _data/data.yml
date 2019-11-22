@@ -65,9 +65,6 @@ studies:
     - name: 학업우등
       time: 2016-2, 2017-1
 
-    - name: 졸업작품(Graduation piece) - 대상 (1st prize!)
-      time: 2019-2
-
 scholarships:
   title: scholarships
   items:
@@ -119,13 +116,14 @@ volunteers:
 
 prizes:
   title: Prizes
-  link: "./proofs/prize001.jpeg"
   items:
     - name: 우수상
       time: 2019. 02
+      link: "./proofs/prize001.jpeg"
       from: 한양대학교 HX-Corps 실전문제 연구단
     - name: 대상 (1st prize)
       time: 2019. 11. 12
+      link: "./proofs/prize002.jpg"
       from: 졸업작품(Graduation piece), 한양대학교 융합전자공학부
 
 
