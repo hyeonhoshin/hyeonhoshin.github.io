@@ -57,7 +57,7 @@ career-profile:
 
 
 studies:
-  title: 학업
+  title: studies
   items:
     - name: 학업우수
       time: 2016-1, 2018-1, 2018-2
@@ -127,6 +127,9 @@ prizes:
 
 
 education:
+    - degree: Master - Electrical engineering
+        university: KAIST
+        time: 2020 - Now
 
     - degree: Bachelor - Convergence electronic engineering
       university: 한양대학교 서울캠퍼스
