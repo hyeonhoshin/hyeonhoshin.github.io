@@ -58,8 +58,11 @@ career-profile:
 studies:
   title: studies
   items:
+    - name: Summa Cum Laude, 졸업우수
+      time: 2020/02/20
+    
     - name: 학업우수
-      time: 2016-1, 2018-1, 2018-2
+      time: 2016-1, 2018-1, 2018-2, 2019-1, 2019-2
 
     - name: 학업우등
       time: 2016-2, 2017-1
@@ -140,7 +143,7 @@ education:
       time: 2020 - Now
 
     - degree: Bachelor - Convergence electronic engineering
-      university: 한양대학교 서울캠퍼스
+      university: 한양대학교 서울캠퍼스, Summa Cum Laude
       time: 2016 - 2020
 
 experiences:
