@@ -190,14 +190,14 @@ experiences:
         임베디드시스템과목에 대한 더 깊은 이해를 위해, 한양대학교 IC-PBL 교수학습센터의 자금 지원을 받아 팀을 구성하여 한 학기 동안 심화 학습했습니다.
 
     - role: Project Manager
-      time: 2019.03 - Present
+      time: 2019.03 - 2019.12
       company: 16Lab, 한양학술타운
       details: |
         2018년 DeepDroner에서 얻은 경험을 바탕으로 3D 프린터의 Leveling 문제를 제기하고, 연구 계획과 팀원들의 업무를 조정하는
         팀장으로써 프로젝트에 참여하고 있습니다.
     
     - role: Senior Engineer
-      time: 2019.03 - Present
+      time: 2019.03 - 2020.02
       company: 16Lab, 한양대학교 HX-Corps 실전문제 연구단
       details: |
         얻어진 Data를 기반으로 Lane detection 알고리즘을 개발하는 SW Engineer로써 참여하고 있습니다. 주로 Keras와 Python을
@@ -216,8 +216,8 @@ projects:
       - title: AI를 이용한 사람, 사물 추적 드론
         link: "/online-cv/proofs/deepdroner_2018.pdf"
         tagline: "경찰의 미아 수색 인력 부족을 해결하기 위해, 미아의 이미지 데이터가 주어지면 해당 미아를 수색하는
-         드론을 개발하고자 했습니다. 머신러닝을 위해 Jetson TX2를 드론에 탑채하고, 화면 내에 주어진 각종 사물들을 
-         구별하는 단계까지 진행했습니다."
+         드론을 개발하고자 했습니다. Jetson TX2를 탑재한 드론을 개발하고, 널리 사용되는 YOLO Network를 드론에서 구동시켜 
+         사람 및 사물을 실시간으로 구분할 수 있게 했습니다."
 
       - title: Velostat을 이용한 3D 프린터의 레벨링 정확도 향상 연구
         link: "/online-cv/proofs/leveling_sensor_2019.pdf"
