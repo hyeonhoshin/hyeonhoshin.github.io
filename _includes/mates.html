@@ -11,13 +11,13 @@
     {% for mate in mates %}
 
       {% if mate.link %}
-      <a href="{{ mate.link }}"><h5>{{ mate.name }}</h5></a>
+      <a href="{{ mate.link }}"><h4>{{ mate.name }}</h4></a>
       {% else %}
-      <h5>{{ mate.name }}</h5>
+      <h4>{{ mate.name }}</h4>
       {% endif %}
 
       {% if mate.summary %}
-      <div class="time">{{ mate.summary }}</div>
+      <div class="meta">{{ mate.summary }}</div>
       {% endif %}
 
     {% endfor %}
