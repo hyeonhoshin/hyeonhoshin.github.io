@@ -24,7 +24,7 @@ sidebar:
 career-profile:
     title: Abstract
     summary: |
-      > Low power, Embedded System, Artificial Intelligence, AIoT, On-device AI
+      > Low power, Embedded System, On-device AI
 
       안녕. 나는 항상 현재의 AI가 너무 수동적이라고 생각해왔어. 그래서 현재의 AI가 현실로부터 더 적극적으로 배우고, 관여할 수 있게 만드는 게 내 목표야.
       이를 위해서 나는 학부생 때는 AI, 임베디드 시스템, 신호처리 위주로 공부해왔고, AI기반의 추적 드론이나, 외부 변화에 강인한 Lane-detection 신경망을 
