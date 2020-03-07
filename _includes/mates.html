@@ -11,9 +11,9 @@
     {% for mate in mates %}
 
       {% if mate.link %}
-      <li><a href="{{ mate.link }}">{{ mate.name }}</a></li>
+      <a href="{{ mate.link }}"><h5>{{ mate.name }}</h5></a>
       {% else %}
-      <li>{{ mate.name }}</li>
+      <h5>{{ mate.name }}</h5>
       {% endif %}
 
       {% if mate.summary %}
