@@ -9,7 +9,7 @@
 
   <ul class="list-unstyled interests-list">
     {% for mate in mates %}
-
+    <div class="item">
       {% if mate.link %}
       <a href="{{ mate.link }}"><h4>{{ mate.name }}</h4></a>
       {% else %}
@@ -17,9 +17,9 @@
       {% endif %}
 
       {% if mate.summary %}
-      <div class="meta">{{ mate.summary }}</div>
+      <h5 class="meta">{{ mate.summary }}</h5>
       {% endif %}
-
+    </div>
     {% endfor %}
   </ul>
 
