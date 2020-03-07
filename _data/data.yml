@@ -22,33 +22,35 @@ sidebar:
         link: "./drawing.html"
     
     mates:
-      - name: 주진원
+      - name: Jinwon Ju
         link: "https://mainepicenter.github.io"
-        summary: "학부동안 같이 프로젝트한 친구"
+        summary: "A friend who worked together during undergraduate"
 
 career-profile:
     title: Abstract
     summary: |
       > Low power, Embedded System, On-device AI
 
-      안녕. 나는 항상 현재의 AI가 너무 수동적이라고 생각해왔어. 그래서 현재의 AI가 현실로부터 더 적극적으로 배우고, 관여할 수 있게 만드는 게 내 목표야.
-      이를 위해서 나는 학부생 때는 AI, 임베디드 시스템, 신호처리 위주로 공부해왔고, AI기반의 추적 드론이나, 외부 변화에 강인한 Lane-detection 신경망을 
-      제작했어. 현재는 임베디드 시스템과 AI를 좀 더 공부하고 싶어서, [KAIST](https://namu.wiki/w/한국과학기술원)의 [Smile lab](https://sites.google.com/view/smilelab)에서 On-device AI를 연구하고 있어. 이후에는 On-device learning에 관한 연구로 Mobicom, 
-      Sensys 같은 Mobile Computing 학회에 Accept을 받으려고 해.
+      Hello. I've always felt uncomfortable with the current AI because it was too passive. So my goal is to make current AI learn and engage more actively from reality. 
+      To this end, I've studied AI, embedded systems, and signal processing in my undergraduate years,and have built AI-based tracking drones and lane-detection neural networks that are robust to exter
+      nal changes. 
+      
+      In current, I'm studying on-device AI in [KAIST](https://namu.wiki/w/한국과학기술원)'s [Smile lab](https://sites.google.com/view/smilelab), because I want to study em
+      bedded systems and AI more. After that, I'm going to publish my research on on-device learning to mobile computing conferences,such as Mobicom or Sensys.
       
 scholarships:
   title: scholarships
   items:
-    - name: 융합전자공학 신입학 장학금
+    - name: Admission Scholarship
       time: 2016.03 - 2018.02
       grade: Full scholarship
 
-    - name: 국가이공계장학금, 재학중우수자
+    - name: National Science and Engineering Scholarship
       time: 2018.03 - 2020.02
       grade: Full scholarship
       link: "./proofs/scolarship001.jpg"
 
-    - name: 한양브레인(성적우수)
+    - name: Hanyang Brain(By excellent grade)
       time: 2018.09 - 2018.12
       grade: Honor
 
@@ -60,15 +62,13 @@ globals:
       host: Qualcomm
       link: "./proofs/qualcomm001.jpg"
       details: |
-        Qualcomm에서 소수의 학생을 선발하여, Qualcomm 샌디에이고 본사를
-        항공/숙박/식대 무료로 탐방하며 Snapdragon이나 5G 같은 주요 기술을
-        본사 직원으로부터 들을 수 있는 프로그램입니다.
+        Qualcomm recruits a handful of students to visit Qualcomm's San Diego headquarters for free on air, accommodation and meals. I was selected for this program and had the opportunity to learn key skills like Snapdragon and 5G from headquarters staff.
       
-    - name: 공과대학 유학생 튜터링
+    - name: International Student Tutoring
       time: 2019.02 - 2019. 07
-      host: 한양대학교 공과대학
+      host: Hanyang University College of Engineering
       details: |
-        한양대학교 공과대학의 주선으로, 한국에 유학온 학생들에게 Data structure를 영어로 가르침.
+        Teaching data structure in English to students studying in Korea.
 
 volunteers:
   title: volunteers
@@ -77,115 +77,113 @@ volunteers:
       time: 2018. 08
       host: Self
 
-    - name: 공업수학2 튜터링, 멘토.
+    - name: Engineering Math 2 Tutoring, Mentor.
       time: 2018.08 - 2018. 12
-      host: 한양대학교 공과대학
+      host: Hanyang University College of Engineering
 
-    - name: 고등학생 진로 및 학과 소개 멘토링, 멘토
+    - name: Department introduction and Mentoring to high school students, Mentor
       time: 2016.11 - 2019. 02
-      host: 공블러
+      host: Gongbler
 
 prizes:
   title: Prizes
   items:
-    - name: 우수상
+    - name: Excellence Prize(3rd)
       time: 2019. 02
       link: "./proofs/prize001.jpeg"
-      from: 한양대학교 HX-Corps 실전문제 연구단
+      from: HX-Corps research team for practical problems, Hanyang University
 
-    - name: 대상 (1st prize)
+    - name: 1st prize
       time: 2019. 11. 12
       link: "./proofs/prize002.jpg"
-      from: 졸업작품(Graduation piece), 한양대학교 융합전자공학부
+      from: Graduation piece, Department of Convergence electronic engineering, Hanyang University
 
-    - name: 최우수상 (2nd prize)
+    - name: Grand Prize (2nd prize)
       time: 2019. 11. 28
       link: "./proofs/prize-capstone.jpg"
-      from: Capstone design fair, 한양대학교 공학교육혁신센터
+      from: Capstone design fair, Engineering Education Innovation Center, Hanyang University
 
-    - name: 우수상
+    - name: Excellence Prize(3rd)
       time: 2020. 02
-      from: 한양대학교 HX-Corps 실전문제 연구단
+      from: HX-Corps research team for practical problems, Hanyang University
 
 education:
-    - degree: 석사 - 전기및전자공학부
+    - degree: Master - Electrical Engineering
       university: KAIST
       time: 2020 - Now
 
-    - degree: 학사 - 융합전자공학부
-      university: 한양대학교 서울캠퍼스, Summa cum laude
+    - degree: Hanyang University - Department of Convergence electronic engineering
+      university: Hanyang University @ Seoul, Summa cum laude
       time: 2016 - 2020
 
 experiences:
     - role: CTO, Cofounder
       time: 2017.06 - 2017.11
-      company: Upcycle, 창업동아리
+      company: Upcycle, Founding club
       details: |
-        한양대학교 창업지원단으로부터 지원금을 받아, 공유 전기자전거 서비스 창업을 진행했습니다.
-        이 때, 무인 자전거 대여 & 반납 시스텝, 도난 위치 추적 시스템을 설계했으며, 지원금으로
-        제작함.
+        We received a grant from the Hanyang University Entrepreneurship Support Group to launch a shared electric bicycle service. At this time, the unmanned bicycle rental & return system and theft location tracking system were designed and built.
     
     - role: Internship
       time: 2017.10 - 2019.04
-      company: 한양대학교 5G/무인이동체 연구센터, 김선우 교수님 연구실
+      company: Hanyang University 5G / Unmanned Vehicle Research Center, Professor Sunwoo Kim's Laboratory
       details: |
-        한양대학교 융합전자공학부 김선우 교수님 밑에서 드론의 군집 주행 연구를 도움.
+        Under Professor Sun-Woo Kim, of Hanyang University, I help his drone clustering research.
     
     - role: Team Manger
       time: 2018.09 - 2018.12
-      company: TonyStack, 러닝페이스메이커
+      company: TonyStack, LearningFaceMaker
       link: "./proofs/hy_lions003.jpeg"
       details: |
-        학내에서 어렵기로 유명한 김동규 교수님의 알고리즘 수업을 이해하기 위해, 한양대학교 IC-PBL 교수학습센터의 자금 지원을 받아 팀을 구성하여 한 학기 동안 심화 학습함.
+        In order to understand the algorithm class of Professor Kim Dong-gyu, which is famous for being difficult, our team were funded by Hanyang University's IC-PBL teaching and learning center and we deeply studied during a semester.
 
     - role: Team Manger
       time: 2019.04 - 2019.07
-      company: TonyStack, 러닝페이스메이커
+      company: TonyStack, LearningFaceMaker
       link: "./proofs/hy_lions002.jpeg"
       details: |
-        임베디드시스템과목에 대한 더 깊은 이해를 위해, 한양대학교 IC-PBL 교수학습센터의 자금 지원을 받아 팀을 구성하여 한 학기 동안 심화 학습함.
+        For a deeper understanding of embedded system subjects, teams are funded by the Hanyang University IC-PBL Teaching and Learning Center to further study for one semester.
 
 projects:
     title: Projects
     assignments:
-      - title: 헬륨을 이용한 드론의 체공시간 향상 연구
+      - title: Study on improving the flight time of drones using helium
         time: 2018.07 - 2018.12
-        team: DeepDroner, 한양학술타운
+        team: DeepDroner, Hanyang Academic Town.
         link: "/online-cv/proofs/helium_drone_2018.pdf" 
-        tagline: "드론의 체공 시간 문제를 해결하기 위해, 더 나은 체공 시간을 가진 비행선과 융합하는 시도를
-        진행함. 한양대학교 스마트교수 학습센터로부터 150만원의 지원금을 받아 연구를 수행했으며,
-        최종발표 및 연구 마무리 또한 진행함."
+        tagline: "In order to solve the drone's flight time problem, an attempt is made to fuse with an airship for better flight time. 
+        The research was conducted with a grant of $1,300 from the Hanyang University Smart Teaching and Learning Center."
 
-      - title: AI를 이용한 사람, 사물 추적 드론
+      - title: AI and human tracking drones
         time: 2018.07 - 2019.02
-        team: DeepDroner, 한양대학교 HX-Corps 실전문제 연구단
+        team: DeepDroner, HX-Corps research team for practical problems
         link: "/online-cv/proofs/deepdroner_2018.pdf"
-        tagline: "경찰의 미아 수색 인력 부족을 해결하기 위해, 미아의 이미지 데이터가 주어지면 해당 미아를 수색하는
-         드론을 개발함. Jetson TX2를 탑재한 드론을 개발하고, 널리 사용되는 YOLO Network를 드론에서 구동시켜 
-         사람 및 사물을 실시간으로 구분함."
+        tagline: "To address the police's lack of search personnel, we have developed a drone to search for lost children given their image data. 
+        At this time, a drone equipped with Jetson TX2 was developed, 
+        and the widely used YOLO Network was run on the drone to separate people and objects in real time."
 
-      - title: Velostat을 이용한 3D 프린터의 레벨링 정확도 향상 연구
+      - title: A Study on the Leveling Accuracy Improvement of 3D Printer Using Velostat
         time: 2019.03 - 2019.12
-        team: 16Lab, 한양학술타운
+        team: 16Lab, Hanyang Academic Town.
         link: "/online-cv/proofs/leveling_sensor_2019.pdf"
-        tagline: "현대의 3D프린터에는 Leveling 과정이 필수적이지만, 필라멘트가 압출되는 노즐과 센서가 떨어져있어
-        센서를 자주 Calibration해야하는 문제가 있음. 이러한 문제를 해결하기 위해, 
-        베드에 압력 측정 센서를 결합하여 노즐의 정확한 위치를 측위함."
+        tagline: "Leveling process is essential in modern 3D printers, 
+        but there is a problem that the sensor needs to be calibrated frequently because the nozzle and sensor from 
+        which filament is extruded are separated. To solve this problem, 
+        we invented a method of integrating a pressure measuring sensor into the bed to position the correct position of the nozzle."
 
-      - title: 외부 상황에 강인한 자율 주행 프로그램
+      - title: Autonomous driving program robust to external changes
         time: 2019.03 - 2020.02
-        team: 16Lab, 한양대학교 HX-Corps 실전문제 연구단
+        team: 16Lab, HX-Corps research team for practical problems
         link: "/online-cv/proofs/lane_detection_2019.pdf"
-        tagline: "기존 Lane detection 알고리즘의 경우, 강한 햇빛 아래에서는 픽셀이 포화되어 Lane의 feature를 추출하기 
-        어려웠음. 이는 테슬라의 자율주행차에서 발생한 사고의 대표적인 원인임. 본 연구에서는 멀티 카메라 혹은 필터를
-         응용하여 전처리 과정을 거친 후, Model-based detection을 진행하여 역광 아래의 환경에서 더 우수한 인식 성능을 보여주고자 함."
+        tagline: "In the conventional lane detection algorithm, it was difficult to extract lane features due to saturated pixels under strong sunlight. This was a major cause of accidents in Tesla's autonomous vehicles. In this study, we proposed tanukiNet, 
+        a lane detection neural network that is resistant to external environmental changes, 
+        and verified it by mounting it on Jetbot."
 
-      - title: 하냥위키
+      - title: Hayan Wiki
         link: "http://www.hanyang.wiki"
-        tagline: "새내기들이 한양대에 대해 필요한 정보를 더 쉽게 얻을 수 있도록, 비공식 위키를 구축, 등록, 배포함."
+        tagline: "To make it easier for newcomers to get the information they need about Hanyang University, I built, registered and distributed an unofficial wiki."
 
-      - title: 원격 3D 프린터 제어시스템
-        tagline : "Raspberry pi 3와 Octoprint 라이브러리를 이용하여, 동아리방에 들리지 않고 집에서도 3D 프린팅을 가능하게 하며 동시에 원격 조작과 웹캠 모니터링이 가능하도록 만들었습니다."
+      - title: Remote 3D Printer Control System
+        tagline : "Using the Raspberry pi 3 and Octoprint library, 3D printing at home is possible without going in a club room, enabling remote control and webcam monitoring."
 
 
 # 아직 논문을 작성하지 않았음.
@@ -237,13 +235,13 @@ skills:
         level: 71%
 
 footnotes:
-    title: 주석
+    title: footnotes
 
     lists:
-      - 한양대학교에서 지원하는 학습지원프로그램으로, 같이 공부할 학우들을 모아 한 학기동안 특정 과목에 대해 집중적으로 공부하는 프로그램입니다.
-      - 한양대학교에서는 아이디어를 가진 스타트업을 선정하여, 창업동아리로 선정하고 지원금을 제공합니다. 당시 한양대의 지원금과 타 지원금을 합하여 공유 전기자전거 사업을 했습니다.
-      - 교내 인터넷 커뮤니티에서 Matlab과 Github의 사용에 어려움을 겪는 사람이 많아, 장소를 빌려 무료로 강의한 적이 있습니다.
-      - Endnote와 같은 무료 서지 관리 프로그램
+      - It is a study support program supported by Hanyang University. It is a program that gathers classmates to study together and concentrates on specific subjects for one semester.
+      - Hanyang University selects startups with ideas, selects them as start-up clubs and provides grants. At the time, Hanyang University subsidies and other subsidies were combined to run a shared electric bicycle project.
+      - Many people have difficulty using Matlab and Github in the campus internet community, so I rented a place and taught it for free.
+      - Free bibliographic management programs like Endnote
 
 footer: >
     Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
