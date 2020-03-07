@@ -20,6 +20,11 @@ sidebar:
     interests:
       - item: Drawing
         link: "./drawing.html"
+    
+    mates:
+      - name: 주진원
+        link: "https://mainepicenter.github.io"
+        summary: "학부동안 같이 프로젝트한 친구"
 
 career-profile:
     title: Abstract
@@ -103,7 +108,7 @@ prizes:
       from: 한양대학교 HX-Corps 실전문제 연구단
 
 education:
-    - degree: Master - Electrical engineering
+    - degree: 석사 - 전기및전자공학부
       university: KAIST
       time: 2020 - Now
 
@@ -201,7 +206,7 @@ skills:
     title: Skills &amp; Proficiency
 
     toolset:
-      - name: LATEX
+      - name: LaTeX
         level: 60%
 
       - name: Keras, Python, Numpy

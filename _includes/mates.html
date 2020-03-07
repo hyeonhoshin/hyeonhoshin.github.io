@@ -1,0 +1,26 @@
+{% assign mates = site.data.data.sidebar.mates %}
+{% if mates %}
+<div class="interests-container container-block">
+
+  <h2 class="container-block-title">
+    Hobbies
+  </h2>
+
+  <ul class="list-unstyled interests-list">
+    {% for mate in mates %}
+
+      {% if mate.link %}
+      <li><a href="{{ mate.link }}">{{ mate.name }}</a></li>
+      {% else %}
+      <li>{{ mate.name }}</li>
+      {% endif %}
+
+      {% if mate.summary %}
+      <h5>{{ mate.summary }}</h5>
+      {% endif %}
+
+    {% endfor %}
+  </ul>
+
+</div><!--//mates-->
+{% endif %}
