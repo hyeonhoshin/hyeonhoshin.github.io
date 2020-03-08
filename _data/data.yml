@@ -161,7 +161,7 @@ projects:
         At this time, a drone equipped with Jetson TX2 was developed, 
         and the widely used YOLO Network was run on the drone to separate people and objects in real time."
 
-      - title: A Study on the Leveling Accuracy Improvement of 3D Printer Using Velostat
+      - title: The Leveling Accuracy Improvement of 3D Printer Using Velostat
         time: 2019.03 - 2019.12
         team: 16Lab, Hanyang Academic Town.
         link: "/online-cv/proofs/leveling_sensor_2019.pdf"
