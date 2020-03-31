@@ -2,10 +2,32 @@
 layout: default
 ---
 
+<section class="section summary-section">
 
-{% include career-profile.html %}
+    <h2 class="section-title">
+      <span class="fa-stack fa-xs">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-palette fa-stack-1x fa-inverse"></i>
+      </span>
+      illustrations
+    </h2>
+  
+    <div class="summary">
+      {{ career-profile.summary | markdownify }}
+    </div><!--//summary-->
 
-{% unless site.data.data.sidebar.education %}
-  {% include education.html %}
-{% endunless %}
+    <img src="./drawings/long_icon.png" style="max-width: 100%; height: auto;">
+    <img src="./drawings/yellow_Batterless.png" style="max-width: 100%; height: auto;">
+    <img src="./drawings/yellow_mmWave.png" style="max-width: 100%; height: auto;">
 
+    <h2 class="section-title">
+        <span class="fa-stack fa-xs">
+          <i class="fas fa-circle fa-stack-2x"></i>
+          <i class="fas fa-palette fa-stack-1x fa-inverse"></i>
+        </span>
+        Comics
+    </h2>
+
+    <img src="./drawings/tanuki_dot.png" style="max-width: 100%; height: auto;">
+      
+  </section><!--//section-->
