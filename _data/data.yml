@@ -8,13 +8,12 @@ sidebar:
 
     # Profile information
     name: Hyeonho Shin
-    tagline: Master Student # Student != Candidate
+    tagline: PhD Student # Student != Candidate
     avatar: profile-512.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
 
     # Sidebar links
-    email: tlsgusghq@me.com
+    email: tlsgusghq[at]kaist.ac.kr
     phone: 010-5136-6003
-    website: tanukilab.dothome.co.kr #do not add http://
     github: hyeonhoshin
 
     interests:
@@ -29,15 +28,11 @@ sidebar:
 career-profile:
     title: Abstract
     summary: |
-      > Low power, Embedded System, On-device AI
-
-      Hello. I've always felt uncomfortable with the current AI because it was too passive. So my goal is to make current AI learn and engage more actively from reality. 
+      > Extremely low-power embedded system with on-device AI
       
-      To this end, I've studied AI, embedded systems, and signal processing in my undergraduate years,and have built AI-based tracking drones and lane-detection neural networks that are robust to exter
-      nal changes. 
+      Hi. I'm a PhD student researching extremely low-power embedded system in [KAIST](https://namu.wiki/w/한국과학기술원)'s [Smile lab](https://sites.google.com/view/smilelab).
       
-      In current, I'm studying on-device AI in [KAIST](https://namu.wiki/w/한국과학기술원)'s [Smile lab](https://sites.google.com/view/smilelab), because I want to study em
-      bedded systems and AI more. After that, I'm going to publish my research on on-device learning to mobile computing conferences,such as Mobicom or Sensys.
+      I hope I can write a paper published to eminent mobile computing conferences(MobiCom, SenSys, and MobiSys)
       
 scholarships:
   title: scholarships
@@ -109,9 +104,13 @@ prizes:
       from: HX-Corps research team for practical problems, Hanyang University
 
 education:
+    - degree: Phd - Electrical Engineering
+      university: KAIST
+      time: 2020 - now
+
     - degree: Master - Electrical Engineering
       university: KAIST
-      time: 2020 - Now
+      time: 2020 - 2022
 
     - degree: Hanyang University - Department of Convergence electronic engineering
       university: Hanyang University @ Seoul, Summa cum laude
@@ -205,35 +204,32 @@ skills:
     title: Skills &amp; Proficiency
 
     toolset:
-      - name: LaTeX
+      - name: RFID system
+        level: 80%
+      
+      - name: Extremely low-power embedded system
+        level: 80%
+    
+      - name: Machine Learning Tools
         level: 60%
 
-      - name: Keras, Python, Numpy
-        level: 82%
-      
-      - name: C Lang
-        level: 82%
-
-      - name: Mendeley[4]
-        level: 90%
-
       - name: Git
-        level: 98%
-
-      - name: Adobe Illustrator
         level: 60%
 
       - name: Matlab
-        level: 67%
+        level: 40%
 
-      - name: CAD & 3D Printing
-        level: 97%
+      - name: 3D Printing
+        level: 80%
+        
+      - name: LaTeX
+        level: 20%
 
       - name: Movie Editing
-        level: 85%
+        level: 20%
       
-      - name: HTML5 & CSS3 & Javascript
-        level: 71%
+      - name: Web Programming
+        level: 20%
 
 footnotes:
     title: footnote
