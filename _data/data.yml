@@ -30,9 +30,7 @@ career-profile:
     summary: |
       > Extremely low-power embedded system with on-device AI
       
-      Hi. I'm a PhD student researching extremely low-power embedded system in [KAIST](https://namu.wiki/w/한국과학기술원)'s [Smile lab](https://sites.google.com/view/smilelab).
-      
-      I hope I can write a paper published to eminent mobile computing conferences(MobiCom, SenSys, and MobiSys)
+      Hi. I'm a PhD student researching extremely low-power embedded system in [KAIST](https://namu.wiki/w/한국과학기술원)'s [Smile lab](https://sites.google.com/view/smilelab). I hope I can write a paper published to eminent mobile computing conferences(MobiCom, SenSys, and MobiSys)
       
 scholarships:
   title: scholarships
@@ -112,7 +110,7 @@ education:
       university: KAIST
       time: 2020 - 2022
 
-    - degree: Hanyang University - Department of Convergence electronic engineering
+    - degree: Bachelor - Department of Convergence electronic engineering
       university: Hanyang University @ Seoul, Summa cum laude
       time: 2016 - 2020
 
