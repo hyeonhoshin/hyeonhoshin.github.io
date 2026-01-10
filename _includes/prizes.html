@@ -16,11 +16,16 @@
     <div class="meta">
 
       <div class="upper-row">
+        {% if prize.link %}
         <a href="{{ prize.link }}">
+        {% endif %}
           <h3 class="job-title">{{ prize.name }}</h3>
+        {% if prize.link %}
         </a>
+        {% endif %}
         <div class="time">{{ prize.time }}</div>
       </div><!--//upper-row-->
+      
       {% if prize.from %}
       <div class="company">{{ prize.from }}</div>
       {% endif %}
