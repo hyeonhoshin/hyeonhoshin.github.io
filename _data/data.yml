@@ -19,6 +19,8 @@ sidebar:
     interests:
       - item: Drawing
         link: "./drawing.html"
+      - item: Schedule
+        link: "./calendar.html"
     
     mates:
       - name: Jinwon Ju
