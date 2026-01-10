@@ -176,7 +176,7 @@ projects:
         a lane detection neural network that is resistant to external environmental changes, 
         and verified it by mounting it on Jetbot."
 
-      - title: Hayan Wiki
+      - title: Hanyang Wiki
         link: "http://www.hanyang.wiki"
         tagline: "To make it easier for newcomers to get the information they need about Hanyang University, I built, registered and distributed an unofficial wiki."
 
@@ -184,18 +184,22 @@ projects:
         tagline : "Using the Raspberry pi 3 and Octoprint library, 3D printing at home is possible without going in a club room, enabling remote control and webcam monitoring."
 
 
-# 아직 논문을 작성하지 않았음.
-# publications:
-#    title: Publications
-#    intro: |
-#      You can list your publications in this section. Lorem ipsum dolor sit
-#      amet, consectetur adipiscing elit. Vestibulum et ligula in nunc
-#      bibendum fringilla a eu lectus.
+publications:
+    title: Publications
+    intro: |
+      International peer-reviewed publications.
 
-#    papers:
-#      - title: The Art of Computer Programming
-#        authors: Donald E. Knuth
-#        conference: Addison-Wesley, 1968
+    papers:
+      - title: "Extremely Low-resolution RFID Vision for Real-time and Visually-anonymized Action Recognition"
+        authors: "Hyeonho Shin*, Seungwoo Shim*, Myeongkyun Cho, Youngki Lee, Jinwoo Shin, Song Min Kim (*: equal contribution)"
+        conference: "ACM Transactions on Sensor Networks (TOSN), 2025 (Fast Track)"
+        link: "https://www.dropbox.com/scl/fi/w5385ezfozfexvyce9kk5/TOSN_Mosaic_Extended.pdf?rlkey=g47r0njkr2rx9nl64xatmvwve&dl=1"  # 논문 링크로 교체
+
+      - title: "Mosaic: Extremely Low-resolution RFID Vision for Visually-anonymized Action Recognition"
+        authors: "Seungwoo Shim*, Hyeonho Shin*, Myeongkyun Cho, Youngki Lee, Jinwoo Shin, Song Min Kim (*: equal contribution)"
+        conference: "ACM/IEEE IPSN 2023 (Acceptance Rate 26.5%)"
+        award: "Outstanding Paper Award by Institute of Embedded Engineering of Korea"
+        link: "https://www.dropbox.com/s/vxhvtjx77int8on/3583120.3586968_Mosaic.pdf?dl=1"  # 논문 링크로 교체
 
       
 skills:
