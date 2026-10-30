@@ -13,7 +13,6 @@ sidebar:
 
     # Sidebar links
     email: hh.shin[at]kaist.ac.kr
-    phone: 
     github: hyeonhoshin
 
     interests:
@@ -44,7 +43,6 @@ scholarships:
     - name: National Science and Engineering Scholarship
       time: 2018.03 - 2020.02
       grade: Full scholarship
-      link: "./proofs/scolarship001.jpg"
 
     - name: Hanyang Brain(By excellent grade)
       time: 2018.09 - 2018.12
@@ -86,12 +84,10 @@ prizes:
   items:
     - name: Excellence Prize(3rd)
       time: 2019. 02
-      link: "./proofs/prize001.jpeg"
       from: HX-Corps research team for practical problems, Hanyang University
 
     - name: 1st prize
       time: 2019. 11. 12
-      link: "./proofs/prize002.jpg"
       from: Graduation piece, Department of Convergence electronic engineering, Hanyang University
 
     - name: Grand Prize (2nd prize)
@@ -132,14 +128,12 @@ experiences:
     - role: Team Manger
       time: 2018.09 - 2018.12
       company: TonyStack, LearningFaceMaker
-      link: "./proofs/hy_lions003.jpeg"
       details: |
         In order to understand the algorithm class of Professor Kim Dong-gyu, which is famous for being difficult, our team were funded by Hanyang University's IC-PBL teaching and learning center and we deeply studied during a semester.
 
     - role: Team Manger
       time: 2019.04 - 2019.07
       company: TonyStack, LearningFaceMaker
-      link: "./proofs/hy_lions002.jpeg"
       details: |
         For a deeper understanding of embedded system subjects, teams are funded by the Hanyang University IC-PBL Teaching and Learning Center to further study for one semester.
 
@@ -179,7 +173,7 @@ projects:
         and verified it by mounting it on Jetbot."
 
       - title: Hanyang Wiki
-        link: "http://www.hanyang.wiki"
+        link: "https://web.archive.org/web/20200210210836/http://hanyang.wiki/"
         tagline: "To make it easier for newcomers to get the information they need about Hanyang University, I built, registered and distributed an unofficial wiki."
 
       - title: Remote 3D Printer Control System
