@@ -1,0 +1,3 @@
+{%- comment -%} One news <li>; used for the visible list and for "More news". Keep this file free of a trailing newline. {%- endcomment -%}
+{%- assign n = include.n -%}
+<li>{% if n.date and n.date != "" %}<time datetime="{{ n.date | replace: '.', '-' | escape }}">{{ n.date | escape }}</time>{% else %}<span></span>{% endif %} <span>{{ n.text }}</span></li>

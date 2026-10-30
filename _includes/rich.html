@@ -1,0 +1,3 @@
+{%- comment -%} Prints include.text, turning **text** into <b>text</b>. Keep this file free of a trailing newline. {%- endcomment -%}
+{%- assign _parts = include.text | replace: " & ", " &amp; " | split: "**" -%}
+{%- for _p in _parts -%}{%- assign _odd = forloop.index0 | modulo: 2 -%}{%- if _odd == 1 -%}<b>{{ _p }}</b>{%- else -%}{{ _p }}{%- endif -%}{%- endfor -%}

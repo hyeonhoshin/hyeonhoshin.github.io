@@ -1,0 +1,11 @@
+{%- comment -%}
+  Dated rows: {% include rows.html items=LIST %} where each item has what, sub (optional),
+  when (optional, plain text: it is escaped). A visually hidden ". " separates what and sub,
+  so text extraction and screen readers do not run the two lines together.
+{%- endcomment -%}
+<ul class="cv" role="list">
+{%- for r in include.items %}
+  {%- assign end = r.what | strip_html | strip | slice: -1 %}
+  <li><div>{% include rich.html text=r.what %}{% if r.sub and r.sub != "" %}{% unless end == "." or end == ":" or end == ";" %}<span class="vh">. </span>{% endunless %} <span class="sub">{% include rich.html text=r.sub %}</span>{% endif %}</div>{% if r.when and r.when != "" %} <span class="when">{{ r.when | escape }}</span>{% endif %}</li>
+{%- endfor %}
+</ul>

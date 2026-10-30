@@ -1,31 +1,50 @@
-#Update all the sections by editing the data.yml file inside _data folder.
+# Site settings for Jekyll, jekyll-seo-tag and jekyll-sitemap.
+# Page content lives in _data/data.yml; styles in _includes/site.css.
 
-# Site Settings
-title: CV - Hyeonho Shin
-url: 'https://hyeonhoshin.github.io'
-baseurl: '/' #change it according to your repository name
-description: A beautiful Jekyll theme for creating resume
-# Style will be applied only after restarting the build or serve. Just choose one of the options.
-theme_skin: blue # blue turquoise green berry orange ceramic
-chrome_mobile_color: #use hex colors (ex:#1976d2) or leave empty if you don't want a color for chrome mobile searchbar
+title: Hyeonho Shin (신현호)
+tagline: Ph.D. Student, KAIST   # homepage <title> becomes "title | tagline"
+description: >-
+  Hyeonho Shin (신현호), Ph.D. student in Electrical Engineering at KAIST (SMILE Lab),
+  builds battery-free, low-power RFID sensing with privacy-preserving on-device AI.
+url: https://hyeonhoshin.github.io
+baseurl: ""
+lang: en
+locale: en_US
+timezone: Asia/Seoul   # "Last updated" and dateModified use Korea time on every build machine
 
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+# GitHub Pages applies its default theme (jekyll-theme-primer) when no theme is set, which
+# would publish an unused /assets/css/style.css. This site has no theme.
+theme: null
 
-# Build settings
-compress-site: yes
+# jekyll-seo-tag: <meta name="author">. Profile links (sameAs) come from data.yml only,
+# through _includes/jsonld.html.
+author:
+  name: Hyeonho Shin
 
-encoding: "utf-8"
-compress_html: # - http://jch.penibelst.de/
-  clippings: all
-  ignore:
-    envs: development
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
-# Development Settings
-port: 4000
-host: 0.0.0.0
-safe: false
+defaults:
+  - scope:
+      path: ""
+    values:
+      image:                                  # og:image / twitter:image for every page
+        path: /assets/images/profile-512.png
+        alt: Photo of Hyeonho Shin
+      twitter:
+        card: summary
 
-theme: jekyll-theme-minimal
+exclude:
+  - README.md
+  - LICENSE.txt
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  # Working notes must never be published (Jekyll turns any root .md file into a page)
+  - CLAUDE.md
+  - AGENTS.md
+  - NOTES.md
+  - TODO.md
+  - "*.local.md"

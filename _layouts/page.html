@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+{% include head.html %}
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top wrap">
+  <p class="back"><a href="{{ '/' | relative_url }}"><span aria-hidden="true">←</span> {{ site.data.data.profile.name }}</a></p>
+  <h1 class="name">{{ page.title }}</h1>
+</header>
+
+<main id="main" class="wrap pg">
+{{ content }}
+</main>
+
+{% include foot.html %}
+{%- unless page.noindex %}
+{%- assign home = "/" | absolute_url %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": {{ page.url | absolute_url | append: "#page" | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "name": {{ page.title | jsonify }},
+  {%- if page.description %}
+  "description": {{ page.description | jsonify }},
+  {%- endif %}
+  "inLanguage": {{ page.lang | default: site.lang | default: "en" | jsonify }},
+  "isPartOf": { "@type": "WebSite", "@id": {{ home | append: "#website" | jsonify }}, "url": {{ home | jsonify }}, "name": {{ site.title | jsonify }} },
+  "author": { "@type": "Person", "@id": {{ home | append: "#person" | jsonify }}, "name": {{ site.data.data.profile.name | jsonify }}, "url": {{ home | jsonify }} }
+}
+</script>
+{%- endunless %}
+</body>
+</html>

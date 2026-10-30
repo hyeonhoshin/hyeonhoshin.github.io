@@ -1,0 +1,192 @@
+/* Site styles. Served as /assets/site.css (assets/site.css includes this file) and linked
+   from _includes/head.html. One accent colour (--accent) plus neutrals; dark mode only
+   swaps the tokens. */
+:root {
+  --bg: #fdfdfb; --fg: #1d2127; --muted: #575e69; --accent: #1f4e8c;
+  --rule: #e1e1db; --tint: #eef2f8;
+  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, "Iowan Old Style", Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --ko: "Noto Serif KR", "Nanum Myeongjo", AppleMyungjo, Batang, serif;
+  --measure: 45rem;   /* text column (about 80 characters of body text) */
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16181c; --fg: #e4e4df; --muted: #a4abb6; --accent: #93bbef;
+    --rule: #2d3138; --tint: #1e2632;
+  }
+}
+
+/* Base */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 1.0625rem/1.6 var(--serif); font-variant-numeric: lining-nums;
+  overflow-wrap: break-word; word-break: keep-all;
+}
+:lang(ko) { font-family: var(--ko); word-break: keep-all; }
+h2 {
+  margin: 1.5rem 0 .8rem; padding-bottom: .25rem; border-bottom: 1px solid var(--rule);
+  font-size: 1.15em; line-height: 1.3;
+}
+h3 { margin: 1.2rem 0 .4rem; font-size: 1em; }
+p { margin: 0 0 .8rem; text-wrap: pretty; }
+
+/* Links are always underlined, so they never rely on colour alone */
+a {
+  color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: .18em;
+  text-decoration-color: color-mix(in srgb, currentColor 55%, transparent);
+}
+a:hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.skip {
+  position: absolute; left: 1rem; top: -4rem; z-index: 1; padding: .4rem .8rem;
+  background: var(--bg); border: 2px solid var(--accent); border-radius: 4px;
+}
+.skip:focus { top: .75rem; }
+.vh {
+  position: absolute; width: 1px; height: 1px; overflow: hidden; white-space: nowrap;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+}
+
+/* Layout: one column with a 1rem gutter on phones */
+.wrap { width: min(100% - 2rem, var(--measure)); margin: 0 auto; }
+
+/* Header: photo, name, role lines, section links */
+.top { padding-top: 1.25rem; }
+.who { display: flex; align-items: center; gap: 1rem; }
+.who picture { flex: none; }
+.avatar {
+  display: block; width: 64px; height: 64px; border-radius: 50%;
+  background: var(--tint); box-shadow: 0 0 0 1px var(--rule);
+}
+.name { margin: 0; font-size: clamp(1.5rem, 7.5vw, 1.75rem); line-height: 1.15; }
+.nk { font-size: .66em; font-weight: 400; color: var(--muted); white-space: nowrap; }
+.role { margin: .2rem 0 0; color: var(--muted); font-size: .9em; line-height: 1.4; }
+.role + .role { margin-top: .05rem; }
+.toc { margin-top: .875rem; border-block: 1px solid var(--rule); }
+.toc ul {
+  list-style: none; margin: 0; padding: .35rem 0;
+  display: flex; flex-wrap: wrap; gap: .1rem 1.1rem;
+}
+.toc a { display: inline-block; padding: .15rem 0; }
+
+/* About */
+.bio { margin-top: .75rem; }
+.links {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: .2rem 1.25rem;
+}
+
+/* Lists shared by news, publications and dated rows */
+.news, .pubs, .cv { list-style: none; margin: 0; padding: 0; }
+.when, time { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sub { display: block; color: var(--muted); font-size: .94em; text-wrap: pretty; }
+.note { margin: .9rem 0 0; color: var(--muted); font-size: .85em; }
+.nw { white-space: nowrap; }
+
+/* News: date column sized by its content (subgrid keeps rows aligned) */
+.news { display: grid; grid-template-columns: max-content 1fr; gap: .3rem 1rem; }
+.news li { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; }
+.more { margin-top: .35rem; }
+.more summary { cursor: pointer; color: var(--muted); width: fit-content; }
+.more summary:hover { color: var(--accent); }
+.more[open] summary { margin-bottom: .4rem; }
+.more .news { margin-top: .3rem; }
+
+/* Publications: venue badge, title, authors, venue, award, links */
+.pubs { display: grid; gap: 1.1rem 1rem; }
+.pubs li { display: grid; gap: .3rem 1rem; align-items: start; }
+.badge {
+  justify-self: start; margin-top: .15rem; padding: .2em .5em .15em;
+  font: 600 .825em/1.25 var(--sans); letter-spacing: .02em; white-space: nowrap;
+  color: var(--accent); background: var(--tint);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); border-radius: 3px;
+}
+.pub p { margin: 0; }
+.ptitle { margin: 0; font-size: 1em; font-weight: 700; line-height: 1.4; text-wrap: pretty; }
+.pa, .venue { font-size: .94em; }
+.venue { color: var(--muted); }
+/* Award: tinted ribbon with an accent rule and star (the one accent colour, not a second hue) */
+.award {
+  width: fit-content; max-width: 100%; padding: .1em .6em .12em .5em;
+  font-size: .94em; background: var(--tint); border-left: 3px solid var(--accent);
+  border-radius: 0 3px 3px 0;
+}
+.pub .award { margin-top: .3rem; }
+.award b { color: var(--accent); }
+.award::before { content: "\2605\00a0"; content: "\2605\00a0" / ""; color: var(--accent); }
+.plinks { padding-top: .15rem; color: var(--muted); }
+.lk { white-space: nowrap; margin-right: .3rem; }
+
+/* Dated rows (patents, service, education, honors, earlier): date label on top on phones */
+.cv li { display: flex; flex-direction: column; margin: 0 0 .75rem; }
+.cv .when {
+  order: -1; font-family: var(--sans); font-size: .8em; font-weight: 600;
+  line-height: 1.5; letter-spacing: .02em;
+}
+
+/* Subpages */
+.back { margin: 0 0 .6rem; font-size: .9em; }
+.pg { margin-top: 1.25rem; }
+.art { margin: 1.5rem 0; }
+.art img {
+  display: block; max-width: 100%; height: auto;
+  background: #fff; border-radius: 4px; box-shadow: 0 0 0 1px var(--rule);
+}
+.art img.px { width: 100%; image-rendering: pixelated; }
+.art figcaption { margin-top: .5rem; color: var(--muted); font-size: .9em; }
+.cal {
+  display: block; width: 100%; height: clamp(24rem, 72vh, 42rem);
+  border: 1px solid var(--rule); border-radius: 4px; background: var(--tint);
+}
+
+/* Footer */
+.end {
+  margin-top: 3rem; padding: 1rem 0 2.5rem; border-top: 1px solid var(--rule);
+  color: var(--muted); font-size: .9em;
+}
+.end p { margin: 0 0 .3rem; }
+
+@media (min-width: 36rem) {
+  .who { gap: 1.25rem; }
+  .avatar { width: 80px; height: 80px; }
+  .name { font-size: 2.1rem; }
+  /* News dates and venue badges share one first-column width, so text lines up */
+  .news, .pubs { grid-template-columns: minmax(6.25rem, max-content) 1fr; }
+  .pubs li { grid-column: 1 / -1; grid-template-columns: subgrid; }
+  .cv li { display: grid; grid-template-columns: 1fr auto; gap: 0 1.5rem; margin-bottom: .55rem; }
+  .cv .when {
+    order: 0; text-align: right; font-family: inherit; font-size: 1em; font-weight: 400;
+    line-height: inherit; letter-spacing: normal;
+  }
+}
+
+@media print {
+  :root {
+    --bg: #fff; --fg: #000; --muted: #333; --accent: #000; --rule: #b5b5b5; --tint: #fff;
+  }
+  @page { size: A4; margin: 14mm 16mm; }
+  body { font-size: 10pt; line-height: 1.38; }
+  .wrap { width: auto; }
+  .noprint, .skip, .back, .lk { display: none; }
+  .lk.doi { display: inline; }
+  .top { padding: 0 0 .4rem; border-bottom: 1px solid var(--rule); }
+  .avatar { width: 52px; height: 52px; box-shadow: none; }
+  .name { font-size: 18pt; }
+  .bio { margin-top: .8rem; }
+  a { color: inherit; text-decoration: none; }
+  .links { display: block; }
+  .links li { display: inline; }
+  .links li + li::before { content: " · "; }
+  .links li { white-space: nowrap; }
+  .links a[data-p]::after { content: " " attr(data-p); }
+  .doi a::after { content: ": " attr(data-doi); }
+  h2 { margin: 1rem 0 .45rem; font-size: 11.5pt; break-after: avoid; }
+  li, .content { break-inside: avoid; }
+  .award { padding: 0 0 0 .45em; background: none; }
+  .pubs { gap: .6rem 1rem; }
+  .badge { border-color: #777; }
+  .end { margin-top: 1rem; padding: .5rem 0 0; }
+}

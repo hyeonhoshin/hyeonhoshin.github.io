@@ -1,23 +1,141 @@
----
-#Add "layout: compress" here to compress the html code
----
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+{%- comment %}
+  Home page only: this layout builds the whole page from _data/data.yml and ignores the page
+  body. Other pages use layout: page.
+{% endcomment %}
+{%- assign d = site.data.data -%}
+{%- assign p = d.profile -%}
+{%- assign shown = d.news_visible | default: 3 | plus: 0 %}
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
 {% include head.html %}
-
+</head>
 <body>
-  <div class="wrapper">
-    {% include sidebar.html %}
-
-    <div class="main-wrapper">
-        {{ content }}
+<a class="skip" href="#main">Skip to content</a>
+<header class="top wrap">
+  <div class="who">
+    <picture>
+      <source type="image/webp" srcset="{{ p.avatar | append: '-192.webp' | relative_url }} 1x, {{ p.avatar | append: '-384.webp' | relative_url }} 2x">
+      <img class="avatar" src="{{ p.avatar | append: '-192.png' | relative_url }}" width="80" height="80" alt="Photo of {{ p.name }}">
+    </picture>
+    <div>
+      <h1 class="name">{{ p.name }}{% if p.name_ko and p.name_ko != "" %} <span class="nk" lang="ko">{{ p.name_ko }}</span>{% endif %}</h1>
+      <p class="role">{{ p.title }}, {{ p.department }}, {{ p.affiliation }}</p>
+      {%- capture lab %}{% if p.lab.name and p.lab.name != "" %}{% if p.lab.url and p.lab.url != "" %}<a href="{{ p.lab.url | escape }}">{{ p.lab.name }}</a>{% else %}{{ p.lab.name }}{% endif %}{% endif %}{% endcapture %}
+      {%- capture adv %}{% if p.advisor and p.advisor != "" %}Advisor: <span class="nw">{{ p.advisor }}</span>{% endif %}{% endcapture %}
+      {%- if lab != "" or adv != "" %}
+      <p class="role">{{ lab }}{% if lab != "" and adv != "" %} · {% endif %}{{ adv }}</p>
+      {%- endif %}
     </div>
   </div>
+  <nav class="toc noprint" aria-label="Sections">
+    <ul role="list">
+      <li><a href="#about">About</a></li>
+      {%- if d.news and d.news.size > 0 %}
+      <li><a href="#news">News</a></li>
+      {%- endif %}
+      {%- if d.publications and d.publications.size > 0 %}
+      <li><a href="#publications">Publications</a></li>
+      {%- endif %}
+      {%- for s in d.row_sections %}{% assign items = d[s.key] %}{% if items and items.size > 0 %}
+      <li><a href="#{{ s.key }}">{{ s.title }}</a></li>
+      {%- endif %}{% endfor %}
+    </ul>
+  </nav>
+</header>
 
-  {% include footer.html %}
+<main id="main" class="wrap">
+  <section id="about">
+    <h2 class="vh">About</h2>
+    <p class="bio">{{ d.bio }}</p>
+    <ul class="links" role="list" aria-label="E-mail and profiles">
+      <li><a href="mailto:{{ p.email }}">{{ p.email }}</a></li>
+      {%- for l in p.links %}{% if l.url and l.url != "" %}
+      <li><a rel="me" href="{{ l.url | escape }}" data-p="{{ l.url | remove_first: 'https://' | remove_first: 'www.' | escape }}">{{ l.label }}</a></li>
+      {%- endif %}{% endfor %}
+    </ul>
+  </section>
+  {%- if d.news and d.news.size > 0 %}
 
-{% include scripts.html %}
+  <section id="news">
+    <h2>News</h2>
+    <ul class="news" role="list">
+      {%- for n in d.news limit: shown %}
+      {% include news-item.html n=n %}
+      {%- endfor %}
+    </ul>
+    {%- if d.news.size > shown %}
+    <details class="more noprint">
+      <summary>More news</summary>
+      <ul class="news" role="list">
+        {%- for n in d.news offset: shown %}
+        {% include news-item.html n=n %}
+        {%- endfor %}
+      </ul>
+    </details>
+    {%- endif %}
+  </section>
+  {%- endif %}
+  {%- if d.publications and d.publications.size > 0 %}
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <ol class="pubs" role="list">
+      {%- for pub in d.publications %}
+      {%- capture pid %}pub-{{ forloop.index }}{% endcapture %}
+      {%- assign names = pub.authors | split: ", " %}
+      {%- assign words = pub.title | split: " " %}
+      <li>
+        {% if pub.badge and pub.badge != "" %}<span class="badge">{{ pub.badge | escape }}</span>{% else %}<span></span>{% endif %}
+        <div class="pub">
+          <h3 class="ptitle" id="{{ pid }}">{% for w in words %}{% if w contains "-" %}<span class="nw">{{ w | escape }}</span>{% else %}{{ w | escape }}{% endif %}{% unless forloop.last %}{{ ' ' }}{% endunless %}{% endfor %}</h3>
+          <p class="pa">{% for a in names %}<span class="nw">{% include rich.html text=a %}</span>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+          <p class="venue"><i>{{ pub.venue }}</i>{% if pub.details and pub.details != "" %}, {{ pub.details }}{% endif %}</p>
+          {%- if pub.award and pub.award != "" %}
+          <p class="award">{% include rich.html text=pub.award %}</p>
+          {%- endif %}
+          {%- capture lks %}
+            {%- if pub.doi and pub.doi != "" %}<span class="lk doi">[<a href="https://doi.org/{{ pub.doi }}" data-doi="{{ pub.doi }}" aria-describedby="{{ pid }}">DOI</a>]</span> {% endif %}
+            {%- if pub.pdf and pub.pdf != "" %}<span class="lk">[<a href="{{ pub.pdf | escape }}" aria-describedby="{{ pid }}">PDF</a>]</span> {% endif %}
+            {%- if pub.video and pub.video != "" %}<span class="lk">[<a href="{{ pub.video | escape }}" aria-describedby="{{ pid }}">Video</a>]</span>{% endif %}
+          {%- endcapture %}
+          {%- assign lks = lks | strip %}
+          {%- if lks != "" %}
+          <p class="plinks">{{ lks }}</p>
+          {%- endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+    {%- assign all_authors = d.publications | map: "authors" | join: " " | remove: "**" %}
+    {%- if all_authors contains "*" %}
+    <p class="note">* Equal contribution.</p>
+    {%- endif %}
+  </section>
+  {%- endif %}
+  {%- for s in d.row_sections %}{% assign items = d[s.key] %}{% if items and items.size > 0 %}
+
+  <section id="{{ s.key }}" class="content">
+    <h2>{{ s.title }}</h2>
+    {% include rows.html items=items %}
+  </section>
+  {%- endif %}{% endfor %}
+  {%- if d.earlier and d.earlier.groups and d.earlier.groups.size > 0 %}
+
+  <section id="earlier" class="noprint">
+    <h2>Earlier</h2>
+    <details class="more">
+      <summary>{{ d.earlier.summary | default: "Earlier activities" }}</summary>
+      {%- for g in d.earlier.groups %}{% if g.items and g.items.size > 0 %}
+      <h3>{{ g.title | replace: " & ", " &amp; " }}</h3>
+      {% include rows.html items=g.items %}
+      {%- endif %}{% endfor %}
+    </details>
+  </section>
+  {%- endif %}
+</main>
+
+{% include foot.html %}
+{% include jsonld.html %}
 </body>
-
 </html>
-

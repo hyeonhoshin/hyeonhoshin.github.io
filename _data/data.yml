@@ -1,242 +1,234 @@
+# =============================================================================
+# Site content. Updating the site = editing this file only.
 #
-# Be aware that even a small syntax error here can lead to failures in output.
+# Writing rules
+#   - ALWAYS quote dates: "2024.10" (unquoted, YAML reads 2024.10 as the number 2024.1).
+#   - Quote any value that contains ": ", " #", or starts with * & ! [ { > | % @ `.
+#   - Inline HTML is allowed in text fields, e.g. <i>Journal</i> or <span lang="ko">한국어</span>.
+#     Wrap Korean words in <span lang="ko"> so they get the right font and line breaking,
+#     and short runs that must stay on one line (page ranges) in <span class="nw">.
+#     Exceptions: `when`, `date`, `badge`, `title`, `year` and every `url`/`doi` are plain
+#     text: HTML is not allowed there and characters such as < and & are escaped on output.
+#   - **text** becomes bold in: publications[].authors and .award, and every what/sub field.
+#   - A link that is empty ("") or missing is simply not shown. Never use "#".
+#   - An empty or missing list hides its whole section and its link in the top menu.
 #
+# Where each key appears (all templates live in _layouts/ and _includes/)
+#   profile, bio           -> header and "About"           (_layouts/default.html)
+#   news, news_visible     -> "News" (newest first; older items go under "More news")
+#   publications           -> "Publications"
+#   row_sections           -> which dated-row lists are shown, in which order, under which
+#                             heading (patents, service, education, honors)  (_includes/rows.html)
+#   earlier                -> collapsed "Earlier" section
+#   bio_ko, misc, footer   -> page footer                  (_includes/foot.html)
+#   JSON-LD (_includes/jsonld.html) reads profile, bio and publications.
+#   /llms.txt reads profile, bio, bio_ko, news (first 4), publications, every row_sections
+#   list and misc.
+# =============================================================================
 
-sidebar:
-    about: True # set to False or comment line if you want to remove the "how to use?" in the sidebar
-    education: True # set to False if you want education in main section instead of in sidebar
+# Required: name, title, department, affiliation, lab.name, advisor, email, photo, avatar.
+# Optional (leave out or set to "" / [] and the matching text disappears everywhere):
+#   name_ko, lab.url, alumni_of, links, keywords.
+profile:
+  name: Hyeonho Shin
+  name_ko: 신현호
+  title: Ph.D. Student                        # header line 2 and JSON-LD jobTitle
+  department: School of Electrical Engineering
+  affiliation: KAIST
+  lab:
+    name: SMILE Lab
+    url: https://smile.kaist.ac.kr
+  advisor: Prof. Song Min Kim
+  email: hh.shin@kaist.ac.kr
+  photo: /assets/images/profile-512.png       # full-size photo (JSON-LD image)
+  avatar: /assets/images/avatar               # prefix of avatar-192.webp, avatar-384.webp, avatar-192.png
+  alumni_of:                                  # JSON-LD alumniOf only (degrees completed)
+    - Hanyang University
+    - KAIST
+  links:                                      # shown after the e-mail address; also JSON-LD sameAs
+    - label: GitHub
+      url: https://github.com/hyeonhoshin
+    - label: ORCID
+      url: https://orcid.org/0009-0003-3352-2008
+    - label: Semantic Scholar
+      url: https://www.semanticscholar.org/author/2216691312
+  keywords:                                   # JSON-LD knowsAbout and /llms.txt (not shown on the page)
+    - Battery-free sensing
+    - Extremely low-power sensing systems
+    - RFID
+    - Privacy-preserving sensing
+    - On-device AI
+    - Embedded systems
+    - Internet of Things
 
-    # Profile information
-    name: Hyeonho Shin
-    tagline: PhD Student # Student != Candidate
-    avatar: profile-512.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
+# First paragraph of the page. Keep the first sentence: search engines and AI tools quote it.
+bio: >-
+  I am Hyeonho Shin (<span lang="ko">신현호</span>), a Ph.D. student in the School of Electrical
+  Engineering at KAIST, advised by Prof. Song Min Kim in the SMILE Lab.
+  I build battery-free and extremely low-power sensing systems that bring always-on,
+  privacy-preserving perception to everyday spaces, combining RFID-based sensing with on-device AI.
+  My work on extremely low-resolution RFID vision (Mosaic) appeared at ACM/IEEE IPSN 2023 and
+  ACM Transactions on Sensor Networks, and is protected by U.S. and Korean patents.
 
-    # Sidebar links
-    email: hh.shin[at]kaist.ac.kr
-    github: hyeonhoshin
+# Korean one-liner: first line of the footer and /llms.txt.
+bio_ko: 신현호 — KAIST 전기및전자공학부 박사과정 (<span class="nw">SMILE Lab</span>, 지도교수 김성민)
 
-    interests:
-      - item: Drawing
-        link: "./drawing.html"
-      - item: Schedule
-        link: "./calendar.html"
-    
-    mates:
-      - name: Jinwon Ju
-        link: "https://mainepicenter.github.io"
-        summary: "A friend who worked together during undergraduate"
+# News: newest first. Required: date ("YYYY.MM", quoted) and text. Only the first
+# `news_visible` items are shown; the rest sit in a collapsed "More news" box.
+# news_visible is a plain number (no quotes needed; quoted values are converted).
+news_visible: 3
+news:
+  - date: "2026.04"
+    text: Our extended Mosaic paper is published in <i>ACM Transactions on Sensor Networks</i> <span class="nw">(Vol. 22, No. 3)</span>.
+  - date: "2025.03"
+    text: U.S. Patent 12,243,291 granted (low-resolution imaging for action recognition).
+  - date: "2024.07"
+    text: Korean Patent 10-2688049 registered.
+  - date: "2024.05"
+    text: Korean Patent 10-2670139 registered.
+  - date: "2023.11"
+    text: Mosaic receives the Outstanding Paper Award at the IEMEK Fall Conference (Jeju).
+  - date: "2023.05"
+    text: Presented Mosaic at ACM/IEEE IPSN 2023 (CPS-IoT Week, San Antonio, TX).
+  - date: "2022.03"
+    text: Started the Ph.D. program at KAIST.
 
-career-profile:
-    title: Abstract
-    summary: |
-      > Extremely low-power embedded system with on-device AI
-      
-      Hi. I'm a PhD student researching extremely low-power embedded system in [KAIST](https://namu.wiki/w/한국과학기술원)'s [Smile lab](https://sites.google.com/view/smilelab). I hope I can write a paper published to eminent mobile computing conferences (MobiCom, SenSys, and MobiSys)
-      
-scholarships:
-  title: scholarships
-  items:
-    - name: Admission Scholarship
-      time: 2016.03 - 2018.02
-      grade: Full scholarship
+# Publications, newest first.
+#   badge       required. Short venue label, e.g. "IPSN 2023" (plain text)
+#   title       required. Plain text
+#   authors     required. Comma-separated; wrap the owner in **…**; a * right after a name marks
+#               equal contribution (so the owner with equal contribution is "**Hyeonho Shin***").
+#               Any * in the list adds the "* Equal contribution." note automatically.
+#   venue       required. Journal or proceedings name (shown in italics)
+#   venue_type  journal | proceedings   (JSON-LD only)
+#   details     optional. Volume, pages, acceptance rate ... (shown after the venue)
+#   year        required. Publication year (JSON-LD datePublished)
+#   award       optional; shown with a star. **…** marks the award name
+#   doi         optional. Bare DOI such as 10.1145/3715697 (the link https://doi.org/… is built for you)
+#   pdf, video  optional full URLs
+publications:
+  - badge: TOSN 2026
+    title: Extremely Low-resolution RFID Vision for Real-time and Visually-anonymized Action Recognition
+    authors: "**Hyeonho Shin***, Seungwoo Shim*, Myeongkyun Cho, Youngki Lee, Jinwoo Shin, Song Min Kim"
+    venue: ACM Transactions on Sensor Networks (TOSN)
+    venue_type: journal
+    details: Vol. 22, No. 3, <span class="nw">pp. 1–26</span>, 2026 (Fast Track).
+    year: 2026
+    award: ""
+    doi: 10.1145/3715697
+    pdf: https://www.dropbox.com/scl/fi/w5385ezfozfexvyce9kk5/TOSN_Mosaic_Extended.pdf?rlkey=g47r0njkr2rx9nl64xatmvwve&dl=1
+    video: ""
+  - badge: IPSN 2023
+    title: "Mosaic: Extremely Low-resolution RFID Vision for Visually-anonymized Action Recognition"
+    authors: "Seungwoo Shim*, **Hyeonho Shin***, Myeongkyun Cho, Youngki Lee, Jinwoo Shin, Song Min Kim"
+    venue: Proceedings of ACM/IEEE IPSN 2023
+    venue_type: proceedings
+    details: <span class="nw">pp. 247–260</span>. Acceptance rate 26.5%.
+    year: 2023
+    award: "**Outstanding Paper Award**, Institute of Embedded Engineering of Korea (IEMEK), 2023"
+    doi: 10.1145/3583120.3586968
+    pdf: https://www.dropbox.com/s/vxhvtjx77int8on/3583120.3586968_Mosaic.pdf?dl=1
+    video: https://youtu.be/8n0j3n2S1tw     # (IPSN'23) Mosaic Demo | Smile Lab KAIST
 
-    - name: National Science and Engineering Scholarship
-      time: 2018.03 - 2020.02
-      grade: Full scholarship
+# Dated-row sections, in page order. Each entry names a list below (`key`) and its heading
+# (`title`, also used in the top menu). To hide a section, delete its entry or empty its list;
+# to add one, add a list with the same three keys and an entry here.
+# The key becomes the section id: use a plain word such as talks or teaching. Avoid keys that
+# contain community, social, comment, related, menu, header, footer, sidebar, sponsor, banner,
+# popup, extra or share: reader tools may drop such sections.
+row_sections:
+  - key: patents
+    title: Patents
+  - key: service
+    title: Service
+  - key: education
+    title: Education
+  - key: honors
+    title: Honors
 
-    - name: Hanyang Brain(By excellent grade)
-      time: 2018.09 - 2018.12
-      grade: Honor
+# Dated rows. Every list below uses the same three keys:
+#   what  required. Main text   |   sub  optional second line (muted)
+#   when  optional. Date text, plain text only (right column on wide screens)
+patents:
+  - what: Low-resolution Imaging Apparatus, Action Recognition Method, Action Recognition Apparatus and Action Recognition System
+    sub: S. M. Kim, S. W. Shim, **H. H. Shin**. U.S. Patent 12,243,291 B2.
+    when: Granted Mar. 2025
+  - what: U.S. Patent Application Pub. 2025/0174010 A1 and 2025/0174011 A1
+    sub: Continuations of U.S. Patent 12,243,291.
+    when: Published May 2025
+  - what: Korean Patents 10-2670139 and 10-2688049
+    sub: <span lang="ko">저해상도 이미징 장치, 동작 인식 방법, 동작 인식 장치 및 <span class="nw">동작 인식 시스템</span></span>
+    when: Registered May & Jul. 2024
 
-globals:
-  title: globals
-  items:
-    - name: Qualcomm IT Tour
-      time: 2019.07.15 - 2019.07.20
-      host: Qualcomm
-      link: "./proofs/qualcomm001.jpg"
-      details: |
-        Qualcomm recruits a handful of students to visit Qualcomm's San Diego headquarters for free on air, accommodation and meals. I was selected for this program and had the opportunity to learn key skills like Snapdragon and 5G from headquarters staff.
-      
-    - name: International Student Tutoring
-      time: 2019.02 - 2019. 07
-      host: Hanyang University College of Engineering
-      details: |
-        Teaching data structure in English to students studying in Korea.
-
-volunteers:
-  title: volunteers
-  items:
-    - name: Matlab with Git Open Seminar
-      time: 2018. 08
-      host: Self
-
-    - name: Engineering Math 2 Tutoring, Mentor.
-      time: 2018.08 - 2018. 12
-      host: Hanyang University College of Engineering
-
-    - name: Mentoring to high school students, Mentor
-      time: 2016.11 - 2019. 02
-      host: Gongbler
-
-prizes:
-  title: Prizes
-  items:
-    - name: Excellence Prize(3rd)
-      time: 2019. 02
-      from: HX-Corps research team for practical problems, Hanyang University
-
-    - name: 1st prize
-      time: 2019. 11. 12
-      from: Graduation piece, Department of Convergence electronic engineering, Hanyang University
-
-    - name: Grand Prize (2nd prize)
-      time: 2019. 11. 28
-      link: "./proofs/prize-capstone.jpg"
-      from: Capstone design fair, Engineering Education Innovation Center, Hanyang University
-
-    - name: Excellence Prize(3rd)
-      time: 2020. 02
-      from: HX-Corps research team for practical problems, Hanyang University
+service:
+  - what: Journal reviewer, <i>IEEE Transactions on Mobile Computing</i>
+    when: "2026"
+  - what: Journal reviewer, <i>ACM Transactions on Sensor Networks</i>
+    when: "2024"
 
 education:
-    - degree: Phd - Electrical Engineering
-      university: KAIST (Smile Lab)
-      time: 2022 - now
+  - what: "**Ph.D.**, Electrical Engineering, KAIST"
+    sub: 'Advisor: <span class="nw">Prof. Song Min Kim</span>'
+    when: 2022–present
+  - what: "**M.S.**, Electrical Engineering, KAIST"
+    when: 2020–2022
+  - what: "**B.S.**, Convergence Electronic Engineering, Hanyang University"
+    sub: Summa Cum Laude
+    when: 2016–2020
 
-    - degree: Master - Electrical Engineering
-      university: KAIST (Smile Lab)
-      time: 2020 - 2022
+honors:
+  - what: Outstanding Paper Award, IEMEK Fall Conference
+    when: "2023"
+  - what: National Science and Engineering Scholarship (full), Korea
+    when: 2018–2020
+  - what: Hanyang University Admission Scholarship (full)
+    when: 2016–2018
 
-    - degree: Bachelor - Department of Convergence electronic engineering
-      university: Hanyang University @ Seoul, Summa cum laude
-      time: 2016 - 2020
+# Collapsed "Earlier" section: one summary line, then groups of dated rows.
+#   summary  optional (default "Earlier activities"); each group needs a title and items.
+earlier:
+  summary: Undergraduate years at Hanyang University, 2016–2020
+  groups:
+    - title: Awards
+      items:
+        - what: 1st Prize (<span lang="ko">대상</span>), Graduation Project, Dept. of Convergence Electronic Engineering, Hanyang University
+          when: "2019.11"
+        - what: Grand Prize (<span lang="ko">최우수상</span>), Capstone Design Fair, Hanyang University
+          when: "2019.11"
+        - what: Excellence Prize (<span lang="ko">우수상</span>), HX-Corps Practical Research Team, Hanyang University
+          when: "2019.02, 2020.02"
+    - title: Experience
+      items:
+        - what: Research intern, 5G/Unmanned Vehicle Research Center (<span class="nw">Prof. Sunwoo Kim</span>), Hanyang University
+          when: "2017.10–2019.04"
+        - what: Qualcomm IT Tour, Qualcomm HQ, San Diego
+          when: "2019.07"
+        - what: Co-founder & CTO, Upcycle (shared e-bike startup club)
+          when: "2017.06–2017.11"
+    - title: Projects
+      items:
+        - what: AI human-tracking drone (Jetson TX2, YOLO)
+          when: 2018–2019
+        - what: Lane detection robust to strong sunlight (tanukiNet)
+          when: 2019–2020
+        - what: 3D printer bed leveling with Velostat
+          when: "2019"
+        - what: Hanyang Wiki, an unofficial campus wiki (archived)
+    - title: Teaching & mentoring
+      items:
+        - what: International student tutoring, Data Structures (in English)
+          when: "2019"
+        - what: Engineering Math tutoring
+          when: "2018"
 
-experiences:
-    - role: CTO, Cofounder
-      time: 2017.06 - 2017.11
-      company: Upcycle, Founding club
-      details: |
-        We received a grant from the Hanyang University Entrepreneurship Support Group to launch a shared electric bicycle service. At this time, the unmanned bicycle rental & return system and theft location tracking system were designed and built.
-    
-    - role: Internship
-      time: 2017.10 - 2019.04
-      company: Hanyang University 5G / Unmanned Vehicle Research Center, Professor Sunwoo Kim's Laboratory
-      details: |
-        Under Professor Sun-Woo Kim, of Hanyang University, I help his drone clustering research.
-    
-    - role: Team Manger
-      time: 2018.09 - 2018.12
-      company: TonyStack, LearningFaceMaker
-      details: |
-        In order to understand the algorithm class of Professor Kim Dong-gyu, which is famous for being difficult, our team were funded by Hanyang University's IC-PBL teaching and learning center and we deeply studied during a semester.
+# Footer links to the other pages of this site (or any URL). Required: label, url.
+#   note  optional, shown after the link.
+misc:
+  - label: Illustrations
+    url: /drawing.html
+  - label: Schedule
+    url: /calendar.html
+    note: (free/busy)
 
-    - role: Team Manger
-      time: 2019.04 - 2019.07
-      company: TonyStack, LearningFaceMaker
-      details: |
-        For a deeper understanding of embedded system subjects, teams are funded by the Hanyang University IC-PBL Teaching and Learning Center to further study for one semester.
-
-projects:
-    title: Projects
-    assignments:
-      - title: Study on improving the flight time of drones using helium
-        time: 2018.07 - 2018.12
-        team: DeepDroner, Hanyang Academic Town.
-        link: "/online-cv/proofs/helium_drone_2018.pdf" 
-        tagline: "In order to solve the drone's flight time problem, an attempt is made to fuse with an airship for better flight time. 
-        The research was conducted with a grant of $1,300 from the Hanyang University Smart Teaching and Learning Center."
-
-      - title: AI and human tracking drones
-        time: 2018.07 - 2019.02
-        team: DeepDroner, HX-Corps research team for practical problems
-        link: "/online-cv/proofs/deepdroner_2018.pdf"
-        tagline: "To address the police's lack of search personnel, we have developed a drone to search for lost children given their image data. 
-        At this time, a drone equipped with Jetson TX2 was developed, 
-        and the widely used YOLO Network was run on the drone to separate people and objects in real time."
-
-      - title: The Leveling Accuracy Improvement of 3D Printer Using Velostat
-        time: 2019.03 - 2019.12
-        team: 16Lab, Hanyang Academic Town.
-        link: "/online-cv/proofs/leveling_sensor_2019.pdf"
-        tagline: "Leveling process is essential in modern 3D printers, 
-        but there is a problem that the sensor needs to be calibrated frequently because the nozzle and sensor from 
-        which filament is extruded are separated. To solve this problem, 
-        we invented a method of integrating a pressure measuring sensor into the bed to position the correct position of the nozzle."
-
-      - title: Autonomous driving program robust to external changes
-        time: 2019.03 - 2020.02
-        team: 16Lab, HX-Corps research team for practical problems
-        link: "/online-cv/proofs/lane_detection_2019.pdf"
-        tagline: "In the conventional lane detection algorithm, it was difficult to extract lane features due to saturated pixels under strong sunlight. This was a major cause of accidents in Tesla's autonomous vehicles. In this study, we proposed tanukiNet, 
-        a lane detection neural network that is resistant to external environmental changes, 
-        and verified it by mounting it on Jetbot."
-
-      - title: Hanyang Wiki
-        link: "https://web.archive.org/web/20200210210836/http://hanyang.wiki/"
-        tagline: "To make it easier for newcomers to get the information they need about Hanyang University, I built, registered and distributed an unofficial wiki."
-
-      - title: Remote 3D Printer Control System
-        tagline : "Using the Raspberry pi 3 and Octoprint library, 3D printing at home is possible without going in a club room, enabling remote control and webcam monitoring."
-
-
-publications:
-    title: Publications
-    intro: |
-      International peer-reviewed publications.
-
-    papers:
-      - title: "Extremely Low-resolution RFID Vision for Real-time and Visually-anonymized Action Recognition"
-        authors: "Hyeonho Shin*, Seungwoo Shim*, Myeongkyun Cho, Youngki Lee, Jinwoo Shin, Song Min Kim (*: equal contribution)"
-        conference: "ACM Transactions on Sensor Networks (TOSN), 2025 (Fast Track)"
-        link: "https://www.dropbox.com/scl/fi/w5385ezfozfexvyce9kk5/TOSN_Mosaic_Extended.pdf?rlkey=g47r0njkr2rx9nl64xatmvwve&dl=1"  # 논문 링크로 교체
-
-      - title: "Mosaic: Extremely Low-resolution RFID Vision for Visually-anonymized Action Recognition"
-        authors: "Seungwoo Shim*, Hyeonho Shin*, Myeongkyun Cho, Youngki Lee, Jinwoo Shin, Song Min Kim (*: equal contribution)"
-        conference: "ACM/IEEE IPSN 2023 (Acceptance Rate 26.5%)"
-        award: "Outstanding Paper Award by Institute of Embedded Engineering of Korea"
-        link: "https://www.dropbox.com/s/vxhvtjx77int8on/3583120.3586968_Mosaic.pdf?dl=1"  # 논문 링크로 교체
-
-      
-skills:
-    title: Skills &amp; Proficiency
-
-    toolset:
-      - name: RFID system
-        level: 80%
-      
-      - name: Extremely low-power embedded system
-        level: 80%
-    
-      - name: Machine Learning Tools
-        level: 60%
-
-      - name: Git
-        level: 60%
-
-      - name: Matlab
-        level: 40%
-
-      - name: 3D Printing
-        level: 80%
-        
-      - name: LaTeX
-        level: 20%
-
-      - name: Movie Editing
-        level: 20%
-      
-      - name: Web Programming
-        level: 20%
-
-footnotes:
-    title: footnote
-
-    lists:
-      - It is a study support program supported by Hanyang University. It is a program that gathers classmates to study together and concentrates on specific subjects for one semester.
-      - Hanyang University selects startups with ideas, selects them as start-up clubs and provides grants. At the time, Hanyang University subsidies and other subsidies were combined to run a shared electric bicycle project.
-      - Many people have difficulty using Matlab and Github in the campus internet community, so I rented a place and taught it for free.
-      - Free bibliographic management programs like Endnote
-
-footer: >
-    Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
+footer:
+  updated: ""      # e.g. "2026-11"; leave empty to print the month of the last build

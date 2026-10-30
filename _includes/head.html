@@ -1,25 +1,20 @@
-<head>
-  <title>{{ site.title }}</title>
-
-  <!-- Meta -->
-  <meta charset="utf-8">
-  {% if site.chrome_mobile_color %}
-  <meta name="theme-color" content="{{ site.chrome_mobile_color }}">
-  {% endif%}
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{{ site.description |default: "A beautiful
-  Jekyll theme for creating resume" }}">
-
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="favicon.ico">
-
-  <!-- Global CSS -->
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/plugins/bootstrap/css/bootstrap.min.css">
-
-  <!-- Plugins CSS -->
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/plugins/font-awesome/css/all.css">
-
-  <!-- Theme CSS -->
-  <link id="theme-style" rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
-</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fdfdfb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16181c" media="(prefers-color-scheme: dark)">
+{%- if page.noindex %}
+<meta name="robots" content="noindex">
+{%- endif %}
+{%- comment %}
+  Keep only the meta tags of {% seo %}: each layout prints its own JSON-LD at the end of <body>
+  (_includes/jsonld.html on the home page, a short WebPage block on sub-pages), so tools that
+  read the page from the top reach the name and bio first. For the same reason the styles are
+  a linked file rather than an inline <style> block.
+{% endcomment %}
+{%- capture seo_tags %}{% seo %}{% endcapture %}
+{{ seo_tags | split: '<script type="application/ld+json">' | first | strip }}
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
+<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">

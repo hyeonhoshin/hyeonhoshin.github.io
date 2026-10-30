@@ -1,0 +1,21 @@
+{%- assign d = site.data.data -%}
+{%- if d.footer.updated and d.footer.updated != "" -%}
+  {%- assign updated = d.footer.updated -%}
+{%- else -%}
+  {%- assign updated = site.time | date: "%Y-%m" -%}
+{%- endif -%}
+{%- assign links = d.misc | where_exp: "m", "m.url" | where_exp: "m", "m.url != ''" %}
+<footer class="end wrap">
+  {%- if d.bio_ko and d.bio_ko != "" %}
+  <p lang="ko">{{ d.bio_ko }}</p>
+  {%- endif %}
+  {%- if links.size > 0 %}
+  <p class="noprint">
+    {%- for m in links %}{% unless forloop.first %} · {% endunless %}
+    {%- if m.url == page.url %}<span aria-current="page">{{ m.label }}</span>{% else %}<a href="{{ m.url | relative_url }}">{{ m.label }}</a>{% endif %}
+    {%- if m.note and m.note != "" %} {{ m.note }}{% endif %}
+    {%- endfor -%}
+  </p>
+  {%- endif %}
+  <p>Last updated: <time datetime="{{ updated | replace: '.', '-' }}">{{ updated }}</time></p>
+</footer>

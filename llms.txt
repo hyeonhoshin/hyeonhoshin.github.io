@@ -1,0 +1,64 @@
+---
+layout: null
+sitemap: false
+---
+{%- assign d = site.data.data -%}
+{%- assign p = d.profile -%}
+# {{ p.name }}{% if p.name_ko and p.name_ko != "" %} ({{ p.name_ko }}){% endif %}
+
+> {{ p.title }}, {{ p.department }}, {{ p.affiliation }}
+{%- if p.lab.name and p.lab.name != "" %} ({{ p.lab.name }}{% if p.advisor and p.advisor != "" %}, advisor: {{ p.advisor }}{% endif %}){% endif %}.
+{%- if p.keywords and p.keywords.size > 0 %} Research: {{ p.keywords | join: ", " }}.{% endif %}
+
+{{ d.bio | strip_html | normalize_whitespace }}
+{%- if d.bio_ko and d.bio_ko != "" %}
+
+{{ d.bio_ko | strip_html }}
+{%- endif %}
+
+## Contact and profiles
+
+- Email: {{ p.email }}
+{%- for l in p.links %}{% if l.url and l.url != "" %}
+- [{{ l.label }}]({{ l.url }})
+{%- endif %}{% endfor %}
+{%- if p.lab.url and p.lab.url != "" %}
+- Lab: [{{ p.lab.name }}]({{ p.lab.url }})
+{%- else %}
+- Lab: {{ p.lab.name }}
+{%- endif %}
+{%- if d.news and d.news.size > 0 %}
+
+## Recent news
+{% for n in d.news limit: 4 %}
+- {% if n.date and n.date != "" %}{{ n.date }}: {% endif %}{{ n.text | strip_html | normalize_whitespace }}
+{%- endfor %}
+{%- endif %}
+{%- if d.publications and d.publications.size > 0 %}
+
+## Publications (* equal contribution)
+{% for pub in d.publications %}
+{%- capture line %}{{ pub.title | strip_html }}. {{ pub.authors | remove: "**" | strip_html }}. {{ pub.venue | strip_html }}
+{%- if pub.details and pub.details != "" %}, {{ pub.details | strip_html | strip }}{% endif %}{% endcapture %}
+{%- assign last = line | slice: -1 %}
+- {{ line }}{% unless last == "." %}.{% endunless %}
+{%- if pub.award and pub.award != "" %} Award: {{ pub.award | remove: "**" | strip_html }}.{% endif %}
+{%- if pub.doi and pub.doi != "" %} DOI: https://doi.org/{{ pub.doi }}{% endif %}
+{%- endfor %}
+{%- endif %}
+{%- for s in d.row_sections %}{% assign items = d[s.key] %}{% if items and items.size > 0 %}
+
+## {{ s.title }}
+{% for x in items %}
+- {{ x.what | remove: "**" | strip_html }}
+{%- if x.sub and x.sub != "" %} ({{ x.sub | remove: "**" | strip_html | strip }}){% endif %}
+{%- if x.when and x.when != "" %}, {{ x.when }}{% endif %}
+{%- endfor %}
+{%- endif %}{% endfor %}
+
+## Pages
+
+- [CV and publications]({{ "/" | absolute_url }})
+{%- for m in d.misc %}{% if m.url and m.url != "" %}
+- [{{ m.label }}]({{ m.url | absolute_url }})
+{%- endif %}{% endfor %}

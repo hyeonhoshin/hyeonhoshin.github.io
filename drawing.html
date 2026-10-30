@@ -1,32 +1,38 @@
 ---
-layout: default
+layout: page
+title: Illustrations and comics
+description: Illustrations and a pixel-art comic drawn by Hyeonho Shin (신현호), Ph.D. student at KAIST SMILE Lab.
 ---
+<p>Illustrations I drew: the SMILE Lab logo, two diagrams that explain battery-free devices and
+mmWave wireless links, and a scene of motion tracking through wireless sensing, followed by a
+pixel-art comic.</p>
 
-<section class="section summary-section">
-    <h2 class="section-title">
-      <span class="fa-stack fa-xs">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-palette fa-stack-1x fa-inverse"></i>
-      </span>
-      illustrations
-    </h2>
+<section>
+  <h2>Illustrations</h2>
+  <figure class="art">
+    <img src="{{ '/drawings/long_icon.png' | relative_url }}" width="932" height="256"
+         alt="SMILE Lab logo: a smiling smartwatch face next to the words “Smile LAB”.">
+    <figcaption>SMILE Lab logo.</figcaption>
+  </figure>
+  <figure class="art">
+    <img src="{{ '/drawings/yellow_Batterless.png' | relative_url }}" width="5464" height="1352" loading="lazy"
+         alt="Diagram of a battery-free device: a solar energy harvester powers a low-power microcontroller, which reads a sensor, drives an actuator and exchanges data with the Internet.">
+  </figure>
+  <figure class="art">
+    <img src="{{ '/drawings/yellow_mmWave.png' | relative_url }}" width="5464" height="1400" loading="lazy"
+         alt="Diagram comparing two wireless links from a cell tower to a phone: a long, low-frequency wave labelled slow and a dense mmWave signal labelled fast.">
+  </figure>
+  <figure class="art">
+    <img src="{{ '/drawings/samsung-man.png' | relative_url }}" width="2200" height="1080" loading="lazy"
+         alt="Illustration of a man whose body pose is tracked as a red skeleton, pointing at a floating product panel (name: SMILE T-shirt, size: small, stock: 21/300) beside a clothing rack. Korean captions read “motion tracking through high-density wireless sensing” and “interaction with objects through large-scale communication”.">
+    <figcaption>Drawn on 2020-04-04; the floating panel references the user interface of <i>SAO</i>.</figcaption>
+  </figure>
+</section>
 
-    <img src="./drawings/long_icon.png" style="max-width: 100%; height: auto; margin: 3% 0%;">
-    <img src="./drawings/yellow_Batterless.png" style="max-width: 100%; height: auto; margin: 3% 0%;">
-    <img src="./drawings/yellow_mmWave.png" style="max-width: 100%; height: auto; margin: 3% 0%;">
-    <img src="./drawings/samsung-man.png" style="max-width: 100%; height: auto; margin: 3% 0% 0% 0%;">
-    <div style="text-align:center; margin-bottom: 3%;">
-    Drew at 2020-04-04, referenced with SAO's UI
-    </div>
-
-    <h2 class="section-title">
-        <span class="fa-stack fa-xs">
-          <i class="fas fa-circle fa-stack-2x"></i>
-          <i class="fas fa-palette fa-stack-1x fa-inverse"></i>
-        </span>
-        Comics
-    </h2>
-
-    <img src="./drawings/tanuki_dot.png" style="max-width: 100%; height: auto; margin: 3% 0%;">
-      
-</section><!--//section-->
+<section>
+  <h2>Comics</h2>
+  <figure class="art">
+    <img class="px" src="{{ '/drawings/tanuki_dot.png' | relative_url }}" width="585" height="330" loading="lazy"
+         alt="Pixel-art comic panel in the style of a retro role-playing game: a raccoon-dog character in glasses above a dialogue box that says, in Korean, “I should be at the library doing my assignments.”">
+  </figure>
+</section>

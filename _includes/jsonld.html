@@ -1,0 +1,85 @@
+{%- comment -%}
+  Structured data (schema.org) built from _data/data.yml. The top-level object is the
+  ProfilePage: its mainEntity is the owner (Person) and each publication is a ScholarlyArticle
+  in hasPart. Printed at the end of <body> (Google reads JSON-LD there too), so tools that read
+  the page from the top reach the visible text first. Keep it a single typed object: a top-level @graph that contains articles makes
+  reader tools (Readability, Firefox Reader View) treat the page as one of the papers.
+  Every value goes through jsonify, so quotes are escaped.
+{%- endcomment -%}
+{%- assign d = site.data.data -%}
+{%- assign p = d.profile -%}
+{%- assign home = "/" | absolute_url -%}
+{%- assign person_id = home | append: "#person" -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": {{ home | append: "#page" | jsonify }},
+  "url": {{ home | jsonify }},
+  "name": {{ site.title | jsonify }},
+  "inLanguage": {{ site.lang | default: "en" | jsonify }},
+  "dateModified": {{ site.time | date_to_xmlschema | jsonify }},
+  "isPartOf": { "@type": "WebSite", "@id": {{ home | append: "#website" | jsonify }}, "url": {{ home | jsonify }}, "name": {{ site.title | jsonify }} },
+  "mainEntity": {
+    "@type": "Person",
+    "@id": {{ person_id | jsonify }},
+    "name": {{ p.name | jsonify }},
+    {%- if p.name_ko and p.name_ko != "" %}
+    "alternateName": {{ p.name_ko | jsonify }},
+    {%- endif %}
+    "jobTitle": {{ p.title | jsonify }},
+    "description": {{ d.bio | strip_html | normalize_whitespace | jsonify }},
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": {{ p.affiliation | jsonify }},
+      "department": { "@type": "Organization", "name": {{ p.department | jsonify }} }
+    },
+    "memberOf": { "@type": "Organization", "name": {{ p.lab.name | jsonify }}{% if p.lab.url and p.lab.url != "" %}, "url": {{ p.lab.url | jsonify }}{% endif %} },
+    {%- if p.alumni_of and p.alumni_of.size > 0 %}
+    "alumniOf": [
+      {%- for a in p.alumni_of %}
+      { "@type": "CollegeOrUniversity", "name": {{ a | jsonify }} }{% unless forloop.last %},{% endunless %}
+      {%- endfor %}
+    ],
+    {%- endif %}
+    "email": {{ p.email | prepend: "mailto:" | jsonify }},
+    "url": {{ home | jsonify }},
+    "image": {{ p.photo | absolute_url | jsonify }},
+    {%- if p.keywords and p.keywords.size > 0 %}
+    "knowsAbout": {{ p.keywords | jsonify }},
+    {%- endif %}
+    "sameAs": [
+      {%- assign first = true -%}
+      {%- for l in p.links -%}{%- if l.url and l.url != "" -%}{%- unless first -%},{%- endunless %}
+      {{ l.url | jsonify }}{%- assign first = false -%}{%- endif -%}{%- endfor %}
+    ]
+  },
+  "hasPart": [
+    {%- for pub in d.publications %}
+    {
+      "@type": "ScholarlyArticle",
+      {%- if pub.doi and pub.doi != "" %}
+      "@id": {{ pub.doi | prepend: "https://doi.org/" | jsonify }},
+      "url": {{ pub.doi | prepend: "https://doi.org/" | jsonify }},
+      "identifier": { "@type": "PropertyValue", "propertyID": "DOI", "value": {{ pub.doi | jsonify }} },
+      {%- endif %}
+      "headline": {{ pub.title | strip_html | jsonify }},
+      "name": {{ pub.title | strip_html | jsonify }},
+      "author": [
+        {%- assign names = pub.authors | remove: "*" | strip_html | split: "," -%}
+        {%- for raw in names -%}{%- assign nm = raw | strip %}
+        { "@type": "Person", "name": {{ nm | jsonify }}{% if nm == p.name %}, "@id": {{ person_id | jsonify }}{% endif %} }{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
+      ],
+      {%- if pub.year and pub.year != "" %}
+      "datePublished": {{ pub.year | append: "" | jsonify }},
+      {%- endif %}
+      {%- if pub.award and pub.award != "" %}
+      "award": {{ pub.award | remove: "**" | strip_html | jsonify }},
+      {%- endif %}
+      "isPartOf": { "@type": {% if pub.venue_type == "journal" %}"Periodical"{% else %}"Book"{% endif %}, "name": {{ pub.venue | strip_html | jsonify }} }
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}
+</script>

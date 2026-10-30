@@ -1,5 +1,7 @@
 _site/
 .sass-cache/
 .jekyll-metadata
-proofs/원본/
 .DS_Store
+# Local-only working folders (never published)
+_audit/
+_private/
