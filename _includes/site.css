@@ -1,13 +1,13 @@
 /* Site styles. Served as /assets/site.css (assets/site.css includes this file) and linked
    from _includes/head.html. One accent colour (--accent) plus neutrals; dark mode only
-   swaps the tokens. */
+   swaps the tokens. One typeface for Korean and Latin text: Pretendard, self-hosted in
+   assets/fonts/pretendard/ (its @font-face rules are linked before this file). */
 :root {
   --bg: #fdfdfb; --fg: #1d2127; --muted: #575e69; --accent: #1f4e8c;
   --rule: #e1e1db; --tint: #eef2f8;
-  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, "Iowan Old Style", Georgia, serif;
-  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --ko: "Noto Serif KR", "Nanum Myeongjo", AppleMyungjo, Batang, serif;
-  --measure: 45rem;   /* text column (about 80 characters of body text) */
+  --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --measure: 45rem;   /* text column (about 90-95 characters of body text) */
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -21,16 +21,16 @@
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
   margin: 0; background: var(--bg); color: var(--fg);
-  font: 1.0625rem/1.6 var(--serif); font-variant-numeric: lining-nums;
+  font: 1rem/1.65 var(--sans);
   overflow-wrap: break-word; word-break: keep-all;
 }
-:lang(ko) { font-family: var(--ko); word-break: keep-all; }
 h2 {
   margin: 1.5rem 0 .8rem; padding-bottom: .25rem; border-bottom: 1px solid var(--rule);
-  font-size: 1.15em; line-height: 1.3;
+  font-size: 1.15em; line-height: 1.3; letter-spacing: -.01em;
 }
 h3 { margin: 1.2rem 0 .4rem; font-size: 1em; }
 p { margin: 0 0 .8rem; text-wrap: pretty; }
+b, strong { font-weight: 600; }   /* one emphasis weight; 700 is kept for .name and h2 */
 
 /* Links are always underlined, so they never rely on colour alone */
 a {
@@ -61,8 +61,11 @@ a:hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
   display: block; width: 64px; height: 64px; border-radius: 50%;
   background: var(--tint); box-shadow: 0 0 0 1px var(--rule);
 }
-.name { margin: 0; font-size: clamp(1.5rem, 7.5vw, 1.75rem); line-height: 1.15; }
-.nk { font-size: .66em; font-weight: 400; color: var(--muted); white-space: nowrap; }
+.name {
+  margin: 0; font-size: clamp(1.5rem, 7.5vw, 1.75rem); font-weight: 700; line-height: 1.15;
+  letter-spacing: -.02em;
+}
+.nk { font-size: .66em; font-weight: 400; letter-spacing: 0; color: var(--muted); white-space: nowrap; }
 .role { margin: .2rem 0 0; color: var(--muted); font-size: .9em; line-height: 1.4; }
 .role + .role { margin-top: .05rem; }
 .toc { margin-top: .875rem; border-block: 1px solid var(--rule); }
@@ -83,7 +86,7 @@ a:hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
 .news, .pubs, .cv { list-style: none; margin: 0; padding: 0; }
 .when, time { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .sub { display: block; color: var(--muted); font-size: .94em; text-wrap: pretty; }
-.note { margin: .9rem 0 0; color: var(--muted); font-size: .85em; }
+.note { margin: .9rem 0 0; color: var(--muted); font-size: .875em; }
 .nw { white-space: nowrap; }
 
 /* News: date column sized by its content (subgrid keeps rows aligned) */
@@ -100,12 +103,12 @@ a:hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
 .pubs li { display: grid; gap: .3rem 1rem; align-items: start; }
 .badge {
   justify-self: start; margin-top: .15rem; padding: .2em .5em .15em;
-  font: 600 .825em/1.25 var(--sans); letter-spacing: .02em; white-space: nowrap;
+  font: 600 .875em/1.25 var(--sans); letter-spacing: .01em; white-space: nowrap;
   color: var(--accent); background: var(--tint);
   border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); border-radius: 3px;
 }
 .pub p { margin: 0; }
-.ptitle { margin: 0; font-size: 1em; font-weight: 700; line-height: 1.4; text-wrap: pretty; }
+.ptitle { margin: 0; font-size: 1em; font-weight: 600; line-height: 1.45; text-wrap: balance; }
 .pa, .venue { font-size: .94em; }
 .venue { color: var(--muted); }
 /* Award: tinted ribbon with an accent rule and star (the one accent colour, not a second hue) */
@@ -117,13 +120,15 @@ a:hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
 .pub .award { margin-top: .3rem; }
 .award b { color: var(--accent); }
 .award::before { content: "\2605\00a0"; content: "\2605\00a0" / ""; color: var(--accent); }
+/* Single decorative symbols: a system font draws them, so no extra Pretendard subset is fetched */
+.award::before, .back [aria-hidden] { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
 .plinks { padding-top: .15rem; color: var(--muted); }
 .lk { white-space: nowrap; margin-right: .3rem; }
 
 /* Dated rows (patents, service, education, honors, earlier): date label on top on phones */
 .cv li { display: flex; flex-direction: column; margin: 0 0 .75rem; }
 .cv .when {
-  order: -1; font-family: var(--sans); font-size: .8em; font-weight: 600;
+  order: -1; font-size: .875em; font-weight: 600;
   line-height: 1.5; letter-spacing: .02em;
 }
 
@@ -148,6 +153,7 @@ a:hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
   color: var(--muted); font-size: .9em;
 }
 .end p { margin: 0 0 .3rem; }
+.end p[lang="ko"] { text-wrap: balance; }
 
 @media (min-width: 36rem) {
   .who { gap: 1.25rem; }
@@ -155,10 +161,11 @@ a:hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
   .name { font-size: 2.1rem; }
   /* News dates and venue badges share one first-column width, so text lines up */
   .news, .pubs { grid-template-columns: minmax(6.25rem, max-content) 1fr; }
-  .pubs li { grid-column: 1 / -1; grid-template-columns: subgrid; }
+  .pubs li { grid-column: 1 / -1; grid-template-columns: subgrid; align-items: baseline; }
+  .badge { margin-top: 0; }   /* sits on the title's first baseline */
   .cv li { display: grid; grid-template-columns: 1fr auto; gap: 0 1.5rem; margin-bottom: .55rem; }
   .cv .when {
-    order: 0; text-align: right; font-family: inherit; font-size: 1em; font-weight: 400;
+    order: 0; text-align: right; font-size: 1em; font-weight: 400;
     line-height: inherit; letter-spacing: normal;
   }
 }
@@ -166,6 +173,11 @@ a:hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
 @media print {
   :root {
     --bg: #fff; --fg: #000; --muted: #333; --accent: #000; --rule: #b5b5b5; --tint: #fff;
+    /* An installed static Pretendard prints as real TrueType (smaller PDF, cleaner text
+       extraction); without it, printing falls through to the web font as on screen. */
+    --sans: Pretendard, "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui,
+      Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+      "Malgun Gothic", sans-serif;
   }
   @page { size: A4; margin: 14mm 16mm; }
   body { font-size: 10pt; line-height: 1.38; }

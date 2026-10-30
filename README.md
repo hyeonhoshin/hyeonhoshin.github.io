@@ -64,6 +64,24 @@ of the last build.
 | `robots.txt`, `llms.txt`, `404.html` | Crawler, AI-reader and not-found pages |
 | `favicon.svg`, `favicon.ico`, `apple-touch-icon.png` | Site icons (the PNG/ICO copies are for older browsers and iOS) |
 | `assets/images/` | `profile-512.png` (share image) and the avatars made from it |
+| `assets/fonts/pretendard/` | Pretendard 1.3.9 web font, self-hosted (see below) |
+
+### Fonts
+
+All text uses [Pretendard](https://github.com/orioncactus/pretendard) (Korean and Latin in one
+typeface). The files in `assets/fonts/pretendard/` are copied unchanged from the npm package
+`pretendard@1.3.9` (`dist/web/variable/pretendardvariable-dynamic-subset.css` and
+`woff2-dynamic-subset/`), so the site loads no fonts from other servers. The font is split into
+92 small files by character range, and a browser downloads only the ones a page needs (about
+160 KB for the home page, 110 KB for the other pages). To update:
+
+1. Replace `pretendardvariable-dynamic-subset.css`, `woff2-dynamic-subset/` and `LICENSE.txt`
+   with `dist/web/variable/pretendardvariable-dynamic-subset.css`,
+   `dist/web/variable/woff2-dynamic-subset/` and `dist/LICENSE.txt` from the new npm package.
+2. Find the file that holds Basic Latin and put its name in the preload link in
+   `_includes/head.html`:
+   `grep -B1 'unicode-range: U+20-' assets/fonts/pretendard/pretendardvariable-dynamic-subset.css | grep -o 'PretendardVariable\.subset\.[0-9]*\.woff2'`
+3. Update the version number here and in the table above.
 
 ### Changing the photo
 
@@ -121,3 +139,5 @@ Check that `/tmp/cv-site/sitemap.xml` lists only the pages you meant to publish.
 `LICENSE.txt` is the MIT license of the original online-cv theme this repository was forked from.
 The theme code has since been replaced, and the license does not apply to the site's content.
 Text, photos and drawings: © Hyeonho Shin, all rights reserved.
+The Pretendard font is © Kil Hyung-jin and licensed under the SIL Open Font License 1.1
+(`assets/fonts/pretendard/LICENSE.txt`).
